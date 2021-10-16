@@ -1,0 +1,24 @@
+[
+    {
+        "companyName": "Herrero Construction",
+        "address": "2100 Oakdale Avenue",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": 94124,
+        "phoneNumber": "(415)-824-7675",
+        "email": "herrero@gmail.com",
+        "password": "password",
+        "projects": []
+    },
+    {
+        "companyName": "Azure Construction",
+        "address": "3877 Grand View Blvd",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": 90066,
+        "phoneNumber": "(213)-699-3173",
+        "email": "azure@gmail.com",
+        "password": "password",
+        "projects": []
+    }
+]

@@ -6,6 +6,10 @@ const itemSchema = new Schema({
         required: true,
         trim: true
     },
+    date: {
+        type: Date,
+        default: Date.now 
+    },
     quanitity: {
         type: Number,
         required: true,
