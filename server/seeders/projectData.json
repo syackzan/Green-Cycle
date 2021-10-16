@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Two Story Residential Home",
+        "type": "Residential",
+        "squareFootage": 7000,
+        "address": "252 Main Street",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": 90066,
+        "owner": "Jim and Jane Clarkson",
+        "generalContractor": [],
+        "recycleItems": []
+    },
+    {
+        "name": "Philz Coffee Buildout",
+        "type": "Commercial",
+        "squareFootage": 3500,
+        "address": "801 S Hope St Unit A",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": 90017,
+        "owner": "Philz Corp",
+        "generalContractor": [],
+        "recycleItems": []
+    },
+    {
+        "name": "Kaiser MRI Ward",
+        "type": "Commercial",
+        "squareFootage": 20000,
+        "address": "Rosa Parks Fwy",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": 90034,
+        "owner": "Kaiser",
+        "generalContractor": [],
+        "recycleItems": []
+    },
+    {
+        "name": "Bay View Apartments",
+        "type": "Commercial",
+        "squareFootage": 7000,
+        "address": "1312 Chestnut St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": 94123,
+        "owner": "Eagle Investment Group",
+        "generalContractor": [],
+        "recycleItems": []
+    }
+]
