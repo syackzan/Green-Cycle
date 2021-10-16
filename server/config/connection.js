@@ -1,12 +1,9 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/green-cycle',
+  process.env.MONGODB_URI || 'mongodb://localhost/greenCycle-db',
   {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
+  
   }
 );
 

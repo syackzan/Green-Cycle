@@ -7,6 +7,16 @@ const projectSchema = new Schema({
         required: true,
         trim: true
     },
+    type: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    squareFootage: {
+        type: Number,
+        required: true,
+        trim: true
+    },
     address: {
         type: String,
         required: true,
