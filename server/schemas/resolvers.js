@@ -10,6 +10,14 @@ const resolvers = {
             })
         },
 
+        contractor: async (parent, { contractorId }) => {
+            // Populate a single GC
+            return await GeneralContractor.findById(contractorId).populate('projects').populate({
+                path: 'projects',
+                populate: 'recycleItems'
+            })
+        },
+
         projects: async () => {
             // Populate all Projects
             return await Project.find({}).populate('recycleItems');

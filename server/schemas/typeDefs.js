@@ -43,6 +43,9 @@ const typeDefs = gql`
         contractors: [GeneralContractor]
         projects: [Project]
         items: [Item]
+        contractor(contractorId: ID!): GeneralContractor
+        project(projectId: ID!): Project
+        item(itemId: ID!): Item
     }
 `;
 
