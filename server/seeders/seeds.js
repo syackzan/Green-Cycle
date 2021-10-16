@@ -11,7 +11,11 @@ db.once('once', async () => {
 
     const contractors = await GeneralContractor.insertMany(gcData);
     const projects = await Project.insertMany(projectData);
-    const item = await Item.insertMany(itemData);
+    const items = await Item.insertMany(itemData);
+
+    console.log(contractors);
+    console.log(projects);
+    console.log(items);
 
     console.log("Complete!");
 })

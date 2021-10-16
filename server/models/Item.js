@@ -29,7 +29,13 @@ const itemSchema = new Schema({
         type: String,
         required: true,
         trim: true
-    }
+    },
+    projects: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Project'
+        }
+    ]
 })
 
 const Item = model('Item', itemSchema);
