@@ -47,6 +47,10 @@ const typeDefs = gql`
         project(projectId: ID!): Project
         item(itemId: ID!): Item
     }
+
+    type Mutation {
+        addItem(material: String!, quantity: Int!, unit: String!, notes: String!, recycler: String!): Item
+    }
 `;
 
 module.exports = typeDefs;

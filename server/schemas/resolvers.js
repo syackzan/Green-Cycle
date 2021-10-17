@@ -39,8 +39,14 @@ const resolvers = {
         }
     },
 
-    Mutations: {
-        
+    Mutation: {
+        addProject: async (parent, { companyName, address, city, state, zip, phoneNumber, email, password }) => {
+            return await Project.Create({ companyName, address, city, state, zip, phoneNumber, email, password })
+        },
+
+        addItem: async (parent, { material, quantity, unit, notes, recycler}) => {
+            return await Item.create({ material, quantity, unit, notes, recycler});
+        }
     }
 }
 

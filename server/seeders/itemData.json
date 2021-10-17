@@ -2,7 +2,7 @@
     {
         "material": "Concrete",
         "date": "07/07/21",
-        "quanitity": 150,
+        "quantity": 150,
         "unit": "Cubic Yards",
         "notes": "150 yards demo'ed from North End Basement for Plumbing & Electrical Adds",
         "recycler": "Hanson Aggregates",
@@ -11,7 +11,7 @@
     {
         "material": "Wood",
         "date": "07/08/21",
-        "quanitity": 25,
+        "quantity": 25,
         "unit": "Linear Feet",
         "notes": "Waste from Installing new Interior Framing on North Side",
         "recycler": "California Waste Services",
@@ -20,7 +20,7 @@
     {
         "material": "Concrete",
         "date": "07/09/21",
-        "quanitity": 66,
+        "quantity": 66,
         "unit": "Cubic Yards",
         "notes": "66 yards demo'ed from South End Basement for Plumbing & Electrical Adds",
         "recycler": "Grit & Gravel",
@@ -29,7 +29,7 @@
     {
         "material": "Wood",
         "date": "07/10/21",
-        "quanitity": 225,
+        "quantity": 225,
         "unit": "Linear Feet",
         "notes": "Waste from Installing West, East, and South Side Framing",
         "recycler": "Direct Disposal",
@@ -38,7 +38,7 @@
     {
         "material": "Steel",
         "date": "07/11/21",
-        "quanitity": 250,
+        "quantity": 250,
         "unit": "Linear Feet",
         "notes": "Demo from current Ceiling Supports",
         "recycler": "Burrtec Services",
@@ -47,7 +47,7 @@
     {
         "material": "Concrete",
         "date": "07/07/21",
-        "quanitity": 150,
+        "quantity": 150,
         "unit": "Cubic Yards",
         "notes": "150 yards demo'ed from North End Basement for Plumbing & Electrical Adds",
         "recycler": "Hanson Aggregates",
@@ -56,7 +56,7 @@
     {
         "material": "Wood",
         "date": "07/08/21",
-        "quanitity": 25,
+        "quantity": 25,
         "unit": "Linear Feet",
         "notes": "Waste from Installing new Interior Framing on North Side",
         "recycler": "California Waste Services",
@@ -65,7 +65,7 @@
     {
         "material": "Concrete",
         "date": "07/09/21",
-        "quanitity": 66,
+        "quantity": 66,
         "unit": "Cubic Yards",
         "notes": "66 yards demo'ed from South End Basement for Plumbing & Electrical Adds",
         "recycler": "Grit & Gravel",
@@ -74,7 +74,7 @@
     {
         "material": "Wood",
         "date": "07/10/21",
-        "quanitity": 225,
+        "quantity": 225,
         "unit": "Linear Feet",
         "notes": "Waste from Installing West, East, and South Side Framing",
         "recycler": "Direct Disposal",
@@ -83,7 +83,7 @@
     {
         "material": "Steel",
         "date": "07/11/21",
-        "quanitity": 250,
+        "quantity": 250,
         "unit": "Linear Feet",
         "notes": "Demo from current Ceiling Supports",
         "recycler": "Burrtec Services",
@@ -92,7 +92,7 @@
     {
         "material": "Concrete",
         "date": "07/07/21",
-        "quanitity": 150,
+        "quantity": 150,
         "unit": "Cubic Yards",
         "notes": "150 yards demo'ed from North End Basement for Plumbing & Electrical Adds",
         "recycler": "Hanson Aggregates",
@@ -101,7 +101,7 @@
     {
         "material": "Wood",
         "date": "07/08/21",
-        "quanitity": 25,
+        "quantity": 25,
         "unit": "Linear Feet",
         "notes": "Waste from Installing new Interior Framing on North Side",
         "recycler": "California Waste Services",
@@ -110,7 +110,7 @@
     {
         "material": "Concrete",
         "date": "07/09/21",
-        "quanitity": 66,
+        "quantity": 66,
         "unit": "Cubic Yards",
         "notes": "66 yards demo'ed from South End Basement for Plumbing & Electrical Adds",
         "recycler": "Grit & Gravel",
@@ -119,7 +119,7 @@
     {
         "material": "Wood",
         "date": "07/10/21",
-        "quanitity": 225,
+        "quantity": 225,
         "unit": "Linear Feet",
         "notes": "Waste from Installing West, East, and South Side Framing",
         "recycler": "Direct Disposal",
@@ -128,7 +128,7 @@
     {
         "material": "Steel",
         "date": "07/11/21",
-        "quanitity": 250,
+        "quantity": 250,
         "unit": "Linear Feet",
         "notes": "Demo from current Ceiling Supports",
         "recycler": "Burrtec Services",
@@ -137,7 +137,7 @@
     {
         "material": "Concrete",
         "date": "07/07/21",
-        "quanitity": 150,
+        "quantity": 150,
         "unit": "Cubic Yards",
         "notes": "150 yards demo'ed from North End Basement for Plumbing & Electrical Adds",
         "recycler": "Hanson Aggregates",
@@ -146,7 +146,7 @@
     {
         "material": "Wood",
         "date": "07/08/21",
-        "quanitity": 25,
+        "quantity": 25,
         "unit": "Linear Feet",
         "notes": "Waste from Installing new Interior Framing on North Side",
         "recycler": "California Waste Services",
@@ -155,7 +155,7 @@
     {
         "material": "Concrete",
         "date": "07/09/21",
-        "quanitity": 66,
+        "quantity": 66,
         "unit": "Cubic Yards",
         "notes": "66 yards demo'ed from South End Basement for Plumbing & Electrical Adds",
         "recycler": "Grit & Gravel",
@@ -164,7 +164,7 @@
     {
         "material": "Wood",
         "date": "07/10/21",
-        "quanitity": 225,
+        "quantity": 225,
         "unit": "Linear Feet",
         "notes": "Waste from Installing West, East, and South Side Framing",
         "recycler": "Direct Disposal",
@@ -173,7 +173,7 @@
     {
         "material": "Steel",
         "date": "07/11/21",
-        "quanitity": 250,
+        "quantity": 250,
         "unit": "Linear Feet",
         "notes": "Demo from current Ceiling Supports",
         "recycler": "Burrtec Services",

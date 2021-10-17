@@ -10,7 +10,7 @@ const itemSchema = new Schema({
         type: Date,
         default: Date.now 
     },
-    quanitity: {
+    quantity: {
         type: Number,
         required: true,
         trim: true
