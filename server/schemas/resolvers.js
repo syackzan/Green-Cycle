@@ -40,13 +40,33 @@ const resolvers = {
     },
 
     Mutation: {
-        addProject: async (parent, { companyName, address, city, state, zip, phoneNumber, email, password }) => {
-            return await Project.Create({ companyName, address, city, state, zip, phoneNumber, email, password })
+        addCompany: async (parent, { companyName, address, city, state, zip, phoneNumber, email, password }) => {
+            return await GeneralContractor.create({ companyName, address, city, state, zip, phoneNumber, email, password })
+        },
+
+        addProject: async(parent, { name, type, squareFootage, address, city, state, zip, owner }) => {
+            return await Project.create({ name, type, squareFootage, address, city, state, zip, owner });
         },
 
         addItem: async (parent, { material, quantity, unit, notes, recycler}) => {
             return await Item.create({ material, quantity, unit, notes, recycler});
-        }
+        },
+
+        updateCompany: async (parent, { contractorId, companyName, address, city, state, zip, phoneNumber, email, password }) => {
+            return await GeneralContractor.findOneAndUpdate(
+                {_id: contractorId },
+                { companyName, address, city, state, zip, phoneNumber, email, password },
+                { new: true}
+                );
+        },
+
+        updateProject: async (parent, { projectId, name, type, squareFootage, address, city, state, zip, owner }) => {
+            return await Project.findOneAndUpdate(
+                {_id: projectId },
+                { name, type, squareFootage, address, city, state, zip, owner },
+                { new: true}
+                );
+        },
     }
 }
 
