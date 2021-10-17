@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,203 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+
+:root {
+  --navColor: rgb(180, 152, 152);
+}
+
+/* Universal Border Used on Pages */
+.mainBorder {
+  border: 2px solid var(--navColor);
+  border-radius: 5px;
+}
+
+/* Used to Center main Pages */
+.center {
+  margin: 50px;
+}
+
+/* Styling Header */
+.headerStyle {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  height: 100px;
+  background-color: #f5f5f5;
+  border-bottom: 2px solid var(--navColor);
+}
+
+/* Giving the Header a little Margin from the side of viewport */
+.pushHeader {
+  margin-left: 10px;
+}
+
+/* Giving Navbar a little margin from side of viewport */
+.pushNav {
+  margin-right: 50px;
+}
+
+.nav-item {
+  margin: 0px 5px;
+  padding: 5px;
+  border-top: 2px solid var(--navColor);
+  border-left: 2px solid var(--navColor);
+  border-right: 2px solid var(--navColor);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: var(--navColor)
+}
+
+/* Changing Nav Links to a differnt style than normal underline blue */
+.navStyle {
+  color: var(--navColor);
+  text-decoration: none;
+}
+
+/* Making the Text darker on h1 header */
+.textDarker {
+  margin: 0px;
+  text-align: end;
+  color: rgb(146, 87, 87);
+}
+
+/* Eliminating the default margin that comes with text */
+.text {
+  margin: 0px;
+  text-align: end;
+  color: var(--navColor);
+  margin-right: -25px;
+}
+
+.active {
+  background-color: lightgray;
+  color:rgb(146, 87, 87);
+  border-radius: 5px;
+  padding: 6px;
+}
+
+/* About Me CSS Section */
+
+/* Headshot Styling and Formattig */
+.img1 {
+  height: 15%;
+  width: 15%;
+  float: right;
+  margin-left: 20px
+}
+
+/* About Me text formatting */
+.meContent {
+  background-color: lightgray;
+  color: black;
+  height: fit-content;
+  padding: 10px;
+  text-align: justify;
+  font-size: 16px;
+}
+
+/* Universal Coloring for all headers */
+.headerColor {
+  color: rgb(146, 87, 87);
+}
+
+/* Header styling for subheaders throughout page */
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  border-bottom: 2px solid var(--navColor);
+  padding: 0px 10px;
+}
+
+/* ALL STYLING FOR PORTFOLIO BOXES */
+
+/*  */
+.order {
+  display: flex;
+  justify-content: center;
+}
+
+/* Formatting the Section Element Holding Individual Projects Link */
+.formatSection {
+  height: 350px;
+  width: 100%;
+  position: relative;
+}
+
+/* Formatting the Image Element For Project Section */
+.formatImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  border-radius: 4px;
+}
+
+/* Formatting the Header Element For Project Section */
+.formatHeader {
+  position: relative;
+  background-color: #f5f5f5;
+  color: rgb(146, 87, 87);
+  font-size: 22px;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+  border: 2px solid var(--navColor);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  z-index: 1;
+  top: -100px;
+  right: 2px;
+}
+
+.fitResume {
+  height: fit-content;
+}
+
+.resumeHeader {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  border-bottom: 2px solid var(--navColor);
+  padding: 0px 10px;
+  text-align: center;
+}
+
+/* Making the Resume Container Taller to fit Resume */
+.taller {
+  height: 1000px;
+}
+
+/* padding for Form content */
+.formPadding {
+  padding: 10px;
+}
+
+/* Footer Styling/Fixing footer to bottom of page */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #f5f5f5;
+  border-top: 2px solid var(--navColor);
+}
+
+.footer-links {
+  margin: 0px 20px;
+}
+
+@media only screen and (max-width: 720px) {
+  .img1 {
+      height: 40%;
+      width: 40%
   }
 }
