@@ -67,6 +67,14 @@ const resolvers = {
                 { new: true}
                 );
         },
+
+        updateItem: async (parent, { itemId, material, quantity, unit, notes, recycler }) => {
+            return await Item.findOneAndUpdate(
+                {_id: itemId },
+                { material, quantity, unit, notes, recycler },
+                { new: true}
+                );
+        },
     }
 }
 
