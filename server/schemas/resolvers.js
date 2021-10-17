@@ -23,10 +23,24 @@ const resolvers = {
             return await Project.find({}).populate('recycleItems');
         },
 
+        project: async (parent, { projectId }) => {
+            // Populate One Project
+            return await Project.findById(projectId).populate('recycleItems')
+        },
+
         items: async () => {
             // Populate all Recycled Items
             return await Item.find({}).populate('projects');
+        },
+
+        item: async (parent, { itemId }) => {
+            // Populate one Item
+            return await Item.findById(itemId)
         }
+    },
+
+    Mutations: {
+        
     }
 }
 
