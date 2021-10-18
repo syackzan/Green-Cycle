@@ -4,7 +4,7 @@ import decode from 'jwt-decode';
 // create a new class to instantiate for a user
 class AuthService {
   // get user data from JSON web token by decoding it
-  getProfile() {
+  getContractor() {
     return decode(this.getToken());
   }
 
@@ -32,14 +32,16 @@ class AuthService {
   login(idToken) {
     // Saves user token to localStorage and reloads the application for logged in status to take effect
     localStorage.setItem('id_token', idToken);
-    //window.location.assign('/');
+    let { data } = this.getContractor()
+    console.log(data);
+    window.location.assign(`/dashboard/${data._id}`);
   }
 
   logout() {
     // Clear user token and profile data from localStorage
     localStorage.removeItem('id_token');
     // this will reload the page and reset the state of the application
-    window.location.reload();
+    window.location.assign('/');
   }
 }
 

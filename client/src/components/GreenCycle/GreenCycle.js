@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import AboutUs from '../pages/AboutUs';
+import Dashboard from '../pages/Dashboard';
 
 function GreenCycle () {
     return (
@@ -21,6 +22,9 @@ function GreenCycle () {
           </Route>
           <Route exact path="/aboutus">
             <AboutUs />
+          </Route>
+          <Route exact path="/dashboard/:id">
+            <Dashboard />
           </Route>
           <Footer />
         </div>
