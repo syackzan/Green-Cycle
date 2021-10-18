@@ -156,6 +156,19 @@
 .lowerBorder {
   border-bottom: 2px solid var(--navColor);
   color: var(--navColor);
+  margin: 0px;
+}
+
+.topListStyle {
+  border-bottom: 1px solid var(--navColor);
+  background-color: gold;
+}
+
+.topListFont {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: blue;
 }
 
 /* Footer Styling/Fixing footer to bottom of page */
