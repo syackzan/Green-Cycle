@@ -1,4 +1,3 @@
-import { PossibleFragmentSpreadsRule } from 'graphql';
 import React from 'react';
 
 function ContractorList ({ contractors }) {

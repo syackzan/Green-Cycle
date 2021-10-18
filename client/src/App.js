@@ -13,8 +13,9 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 //Importing All Components & Pages
 import GreenCycle from './components/GreenCycle/GreenCycle'
 
+// Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: './graphql',
+  uri: '/graphql',
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
