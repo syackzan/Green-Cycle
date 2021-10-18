@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ContractorList from '../ContractorList/ContractorList'
 import Form from 'react-bootstrap/Form';
+import { useHistory } from "react-router-dom";
 
 import { useQuery, useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
@@ -20,6 +21,7 @@ function Login() {
     const [login, { error }] = useMutation(LOGIN_USER);
 
     const handleChange = (event) => {
+        event.preventDefault();
         const { name, value } = event.target
 
         setFormState({
@@ -28,15 +30,19 @@ function Login() {
         })
     };
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        console.log(formState);
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+        //alert(e.target);
+
         try {
+
             const { data } = await login({
                 variables: {...formState},
             });
-
+            console.log(data);
+            
             Auth.login(data.login.token);
+
         } catch (e) {
             console.error(e)
         }
@@ -61,7 +67,7 @@ function Login() {
                     <div className="col-md-8 topMargin" >
                        <div className="d-flex justify-content-center align-items-center sizingLogin thickBorder">
                         <div className="d-flex align-items-center thickBorder styleLogin">
-                                <Form className="flex-fill" onSubmit={handleFormSubmit}>
+                                <Form className="flex-fill" >
                                     <Form.Group className="d-flex justify-content-center">
                                         <Form.Label className="loginHeader">Login Below!</Form.Label>
                                     </Form.Group>
@@ -91,10 +97,10 @@ function Login() {
                                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                         <Form.Check type="checkbox" label="Check me out" />
                                     </Form.Group>
-                                    <button>
+                                    <button onClick={handleFormSubmit}>
                                         Login
                                     </button>
-                                </Form>
+                                </Form>    
                             </div>
                        </div>
                     </div>

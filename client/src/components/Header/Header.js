@@ -23,7 +23,18 @@ function Header () {
             <div className="pushNav webDisplay">
                 <ul className="nav nav-tabs">
                     {Auth.loggedIn() ? (
-                    <button onClick={logout()}></button>
+                        <>
+                        <li className='nav-item'>
+                        <Link className="navStyle" to='/dashboard'>Dashboard</Link>
+                        </li>
+                        <li className='nav-item'>
+                        <Link className="navStyle" to='/' onClick={() => logout()}>Logout</Link>
+                        </li>
+                        <li className='nav-item'>
+                        <Link className="navStyle" to='/aboutus'>About Us</Link>
+                        </li>
+                        </>
+                    // <button onClick={() => logout()}>Button</button>
                     ) : (
                     <>
                         <li className='nav-item'>
