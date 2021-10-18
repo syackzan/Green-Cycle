@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../assets/images/logo1.png'
+import { Link } from 'react-router-dom';
 
 function Header () {
     return (
@@ -14,13 +15,13 @@ function Header () {
             <div className="pushNav webDisplay">
                 <ul className="nav nav-tabs">
                     <li className='nav-item'>
-                        <a href="#a" className="navStyle">Sign-Up</a>
+                    <Link className="navStyle" to='/signup'>Sign Up</Link>
                     </li>
                     <li className='nav-item'>
-                        <a href="#b" className="navStyle">Login</a>
+                    <Link className="navStyle" to='/'>Login</Link>
                     </li>
                     <li className='nav-item'>
-                        <a href="#c" className="navStyle">About Us</a>
+                    <Link className="navStyle" to='/aboutus'>About Us</Link>
                     </li>
                 </ul>   
             </div>
