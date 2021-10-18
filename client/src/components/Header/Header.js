@@ -2,7 +2,15 @@ import React from 'react';
 import logo from '../../assets/images/logo1.png'
 import { Link } from 'react-router-dom';
 
+import Auth from '../../utils/auth';
+
 function Header () {
+
+    const logout = (event) => {
+        //event.preventDefault();
+        Auth.logout();
+    }
+
     return (
         <header className="headerStyle">
             <div className="pushHeader">
@@ -14,15 +22,21 @@ function Header () {
             </div>
             <div className="pushNav webDisplay">
                 <ul className="nav nav-tabs">
-                    <li className='nav-item'>
-                    <Link className="navStyle" to='/signup'>Sign Up</Link>
-                    </li>
-                    <li className='nav-item'>
-                    <Link className="navStyle" to='/'>Login</Link>
-                    </li>
-                    <li className='nav-item'>
-                    <Link className="navStyle" to='/aboutus'>About Us</Link>
-                    </li>
+                    {Auth.loggedIn() ? (
+                    <button onClick={logout()}></button>
+                    ) : (
+                    <>
+                        <li className='nav-item'>
+                        <Link className="navStyle" to='/signup'>Sign Up</Link>
+                        </li>
+                        <li className='nav-item'>
+                        <Link className="navStyle" to='/'>Login</Link>
+                        </li>
+                        <li className='nav-item'>
+                        <Link className="navStyle" to='/aboutus'>About Us</Link>
+                        </li>
+                    </>
+                    )}
                 </ul>   
             </div>
             <div className="phoneDisplay pushNavButton">

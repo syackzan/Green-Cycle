@@ -40,7 +40,7 @@ const typeDefs = gql`
     }
 
     type Auth {
-        touch: ID!
+        token: ID!
         contractor: GeneralContractor
     }
 

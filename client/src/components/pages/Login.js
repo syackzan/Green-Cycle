@@ -3,11 +3,11 @@ import ContractorList from '../ContractorList/ContractorList'
 import Form from 'react-bootstrap/Form';
 
 import { useQuery, useMutation } from '@apollo/client';
-// import { LOGIN_USER } from '../../utils/mutations';
+import { LOGIN_USER } from '../../utils/mutations';
 
 import { GET_ALL_CONTRACTORS } from '../../utils/queries';
 
-// import AuthService from '../../utils/auth';
+import Auth from '../../utils/auth';
 
 function Login() {
 
@@ -16,36 +16,36 @@ function Login() {
     // console.log(data);
     console.log(contractors);
 
-    // const [formState, setFormState] = useState({email: '', password: ''});
-    // const [login, { error, data }] = useMutation(LOGIN_USER);
+    const [formState, setFormState] = useState({email: '', password: ''});
+    const [login, { error }] = useMutation(LOGIN_USER);
 
-    // const handleChange = (event) => {
-    //     const { name, value } = event.target
+    const handleChange = (event) => {
+        const { name, value } = event.target
 
-    //     setFormState({
-    //         ...formState,
-    //         [name]: value,
-    //     })
-    // };
+        setFormState({
+            ...formState,
+            [name]: value,
+        })
+    };
 
-    // const handleFormSubmit = async (event) => {
-    //     event.preventDefault();
-    //     console.log(formState);
-    //     try {
-    //         const { data } = await login({
-    //             variables: {...formState},
-    //         });
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        console.log(formState);
+        try {
+            const { data } = await login({
+                variables: {...formState},
+            });
 
-    //         AuthService.login(data.login.token);
-    //     } catch (e) {
-    //         console.error(e)
-    //     }
+            Auth.login(data.login.token);
+        } catch (e) {
+            console.error(e)
+        }
 
-    //     setFormState({
-    //         email: '',
-    //         password: '',
-    //     });
-    // };
+        setFormState({
+            email: '',
+            password: '',
+        });
+    };
 
 
     return (
@@ -61,7 +61,7 @@ function Login() {
                     <div className="col-md-8 topMargin" >
                        <div className="d-flex justify-content-center align-items-center sizingLogin thickBorder">
                         <div className="d-flex align-items-center thickBorder styleLogin">
-                                <Form className="flex-fill" onSubmit="{handleFormSubmit}">
+                                <Form className="flex-fill" onSubmit={handleFormSubmit}>
                                     <Form.Group className="d-flex justify-content-center">
                                         <Form.Label className="loginHeader">Login Below!</Form.Label>
                                     </Form.Group>
@@ -71,8 +71,8 @@ function Login() {
                                         type="email" 
                                         placeholder="Enter email"
                                         name="email"
-                                        value="{formState.email}"
-                                        onChange="{handleChange}" 
+                                        value={formState.email}
+                                        onChange={handleChange} 
                                         />
                                         <Form.Text className="text-muted">
                                             We'll never share your email with anyone else.
@@ -85,8 +85,8 @@ function Login() {
                                         type="password" 
                                         placeholder="Password"
                                         name="password"
-                                        value="{formState.password}"
-                                        onChange="{handleChange}" />
+                                        value={formState.password}
+                                        onChange={handleChange} />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                         <Form.Check type="checkbox" label="Check me out" />

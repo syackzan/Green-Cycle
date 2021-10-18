@@ -45,11 +45,11 @@ const resolvers = {
         login: async (parent, { email, password }) => {
             const contractor = await GeneralContractor.findOne({ email });
 
-            if (!profile) {
+            if (!contractor) {
                 throw new AuthenticationError('No profile with this email found!');
               }
         
-            //   const correctPw = await profile.isCorrectPassword(password);
+            //   const correctPw = await contractor.isCorrectPassword(password);
         
             //   if (!correctPw) {
             //     throw new AuthenticationError('Incorrect password!');
