@@ -54,6 +54,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
+        login(email: String!, password: String!): Auth
         addCompany(companyName: String!, address: String!, city: String!, state: String!, zip: Int!, phoneNumber: String!, email: String!, password: String!): GeneralContractor
         addProject(name: String!, type: String!, squareFootage: Int!, address: String!, city: String!, state: String!, zip: Int!, owner: String!): Project
         addItem(material: String!, quantity: Int!, unit: String!, notes: String!, recycler: String!): Item
