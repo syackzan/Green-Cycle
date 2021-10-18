@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_SINGLE_CONTRACTOR } from '../../utils/queries';
 
+import  ProjectList  from '../ProjectList/ProjectList'
+
 function Dashboard (){
     
     const { contractorId } = useParams();
@@ -15,9 +17,36 @@ function Dashboard (){
 
     const contractor = data?.contractor || [];
     console.log(contractor);
+
+    if(loading) {
+        return <div>Loading...</div>
+    }
     
     return (
-        <p>Dashboard</p>
+        <div className="jumbotron m-2">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="contractorCard mainBorder">
+                                    <div className="cCardHeader p-1">
+                                        <h2>{contractor.companyName}</h2>
+                                        <p>{contractor.address}, {contractor.city}, {contractor.state} {contractor.zip}</p>
+                                    </div>
+                                    <div className="cCardHeader d-flex">
+                                        <ProjectList contractor={contractor} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 
