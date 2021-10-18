@@ -33,7 +33,6 @@ class AuthService {
     // Saves user token to localStorage and reloads the application for logged in status to take effect
     localStorage.setItem('id_token', idToken);
     let { data } = this.getContractor()
-    console.log(data);
     window.location.assign(`/dashboard/${data._id}`);
   }
 

@@ -23,7 +23,7 @@ function GreenCycle () {
           <Route exact path="/aboutus">
             <AboutUs />
           </Route>
-          <Route exact path="/dashboard/:id">
+          <Route exact path="/dashboard/:contractorId">
             <Dashboard />
           </Route>
           <Footer />
