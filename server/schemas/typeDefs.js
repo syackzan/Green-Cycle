@@ -39,6 +39,11 @@ const typeDefs = gql`
         projects: Project
     }
 
+    type Auth {
+        touch: ID!
+        contractor: GeneralContractor
+    }
+
     type Query {
         contractors: [GeneralContractor]
         projects: [Project]

@@ -1,4 +1,6 @@
 const { GeneralContractor, Project, Item } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -40,6 +42,23 @@ const resolvers = {
     },
 
     Mutation: {
+        login: async (parent, { email, password }) => {
+            const contractor = await GeneralContractor.findOne({ email });
+
+            if (!profile) {
+                throw new AuthenticationError('No profile with this email found!');
+              }
+        
+            //   const correctPw = await profile.isCorrectPassword(password);
+        
+            //   if (!correctPw) {
+            //     throw new AuthenticationError('Incorrect password!');
+            //   }
+        
+              const token = signToken(contractor);
+              return { token, contractor }
+        },
+
         addCompany: async (parent, { companyName, address, city, state, zip, phoneNumber, email, password }) => {
             return await GeneralContractor.create({ companyName, address, city, state, zip, phoneNumber, email, password })
         },
