@@ -14,7 +14,7 @@ function Header () {
             <div className="pushNav webDisplay">
                 <ul className="nav nav-tabs">
                     <li className='nav-item'>
-                        <a href="#a" className="navStyle">Sign-In</a>
+                        <a href="#a" className="navStyle">Sign-Up</a>
                     </li>
                     <li className='nav-item'>
                         <a href="#b" className="navStyle">Login</a>
