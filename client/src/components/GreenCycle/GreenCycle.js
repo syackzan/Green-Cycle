@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 
 function GreenCycle () {
     return (
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="">
           <Header />
           <Footer />
         </div>
