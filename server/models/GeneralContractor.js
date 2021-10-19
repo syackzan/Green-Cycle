@@ -23,7 +23,7 @@ const generalContractorSchema = new Schema({
         trim: true
     },
     zip: {
-        type: Number,
+        type: String,
         required: true,
         trim: true
     },

@@ -13,7 +13,7 @@ const projectSchema = new Schema({
         trim: true
     },
     squareFootage: {
-        type: Number,
+        type: String,
         required: true,
         trim: true
     },
@@ -33,7 +33,7 @@ const projectSchema = new Schema({
         trim: true
     },
     zip: {
-        type: Number,
+        type: String,
         required: true,
         trim: true
     },

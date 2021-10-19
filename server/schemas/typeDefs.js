@@ -7,7 +7,7 @@ const typeDefs = gql`
         address: String
         city: String
         state: String
-        zip: Int
+        zip: String
         phoneNumber: String
         email: String
         password: String
@@ -18,11 +18,11 @@ const typeDefs = gql`
         _id: ID
         name: String
         type: String
-        squareFootage: Int
+        squareFootage: String
         address: String
         city: String
         state: String
-        zip: Int
+        zip: String
         owner: String
         generalContractor: GeneralContractor
         recycleItems: [Item]
@@ -32,7 +32,7 @@ const typeDefs = gql`
         _id: ID
         material: String
         date: String
-        quantity: Int
+        quantity: String
         unit: String
         notes: String
         recycler: String
@@ -55,12 +55,12 @@ const typeDefs = gql`
 
     type Mutation {
         login(email: String!, password: String!): Auth
-        addCompany(companyName: String!, address: String!, city: String!, state: String!, zip: Int!, phoneNumber: String!, email: String!, password: String!): GeneralContractor
-        addProject(name: String!, type: String!, squareFootage: Int!, address: String!, city: String!, state: String!, zip: Int!, owner: String!): Project
-        addItem(material: String!, quantity: Int!, unit: String!, notes: String!, recycler: String!): Item
-        updateCompany(contractorId: ID!, companyName: String!, address: String!, city: String!, state: String!, zip: Int!, phoneNumber: String!, email: String!, password: String!): GeneralContractor
-        updateProject(projectId: ID!, name: String!, type: String!, squareFootage: Int!, address: String!, city: String!, state: String!, zip: Int!, owner: String!): Project
-        updateItem(itemId: ID!, material: String!, quantity: Int!, unit: String!, notes: String!, recycler: String!): Item
+        addCompany(companyName: String!, address: String!, city: String!, state: String!, zip: String!, phoneNumber: String!, email: String!, password: String!): GeneralContractor
+        addProject(name: String!, type: String!, squareFootage: String!, address: String!, city: String!, state: String!, zip: String!, owner: String!): Project
+        addItem(material: String!, quantity: String!, unit: String!, notes: String!, recycler: String!): Item
+        updateCompany(contractorId: ID!, companyName: String!, address: String!, city: String!, state: String!, zip: String!, phoneNumber: String!, email: String!, password: String!): GeneralContractor
+        updateProject(projectId: ID!, name: String!, type: String!, squareFootage: String!, address: String!, city: String!, state: String!, zip: String!, owner: String!): Project
+        updateItem(itemId: ID!, material: String!, quantity: String!, unit: String!, notes: String!, recycler: String!): Item
     }
 `;
 

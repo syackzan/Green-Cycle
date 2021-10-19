@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Auth from '../../utils/auth';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -10,6 +10,17 @@ import Analytics from '../Analytics/Analytics';
 
 function Dashboard (){
     
+    const [display, setDisplay] = useState('');
+
+    const toggleVisible = async (event) => {
+
+        if (!display){
+            await setDisplay('t')
+        } else {
+            await setDisplay('')
+        }
+    }
+
     const { contractorId } = useParams();
     console.log(contractorId);
 
@@ -32,9 +43,14 @@ function Dashboard (){
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="contractorCard mainBorder">
-                                    <div className="cCardHeader p-1">
-                                        <h2>{contractor.companyName}</h2>
-                                        <p>{contractor.address}, {contractor.city}, {contractor.state} {contractor.zip}</p>
+                                    <div className="cCardHeader d-flex p-1 justify-content-between">
+                                        <div>
+                                            <h2>{contractor.companyName}</h2>
+                                            <p>{contractor.address}, {contractor.city}, {contractor.state} {contractor.zip}</p>
+                                        </div>
+                                        <div className="p-2">
+                                            <button onClick={() => toggleVisible()}>Add New Project</button>
+                                        </div>
                                     </div>
                                     <div className="cCardHeader d-flex">
                                         <ProjectList contractor={contractor} />
@@ -44,7 +60,7 @@ function Dashboard (){
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="row">
+                        <div className={display ? ("displayYes row") : ("displayNo")}>
                             <CreateNewProject />
                         </div>
                         <div className="row">

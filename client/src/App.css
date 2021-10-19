@@ -216,6 +216,14 @@
   background-color: #f5f5f5
 }
 
+.displayYes {
+  display: block;
+}
+
+.displayNo {
+  display: none;
+}
+
 /* PROJECTLIST FORMATTING */
 
 .projectCardsBackground {

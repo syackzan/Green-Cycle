@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
 import { useMutation } from '@apollo/client';
+import { ADD_PROJECT } from '../../utils/mutations'
 
 function CreateNewProject() {
     
@@ -16,11 +17,18 @@ function CreateNewProject() {
         owner: ''
     });
 
-    const handleFormSubmit = (event) => {
+    const [addProject, { error }] = useMutation(ADD_PROJECT);
+
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            console.log("Hello");
+            const { data } = await addProject({
+                variables: {...formState},
+              })
+              
+              console.log(data);
+              //window.location.reload();
         } catch(e){
             console.log(e);
         }
