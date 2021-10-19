@@ -50,10 +50,42 @@ function CreateNewProject() {
         const { name, value } = event.target;
 
         
-        setFormState({
-            ...formState,
-            [name]: value,
-        })
+        // setFormState({
+        //     ...formState,
+        //     [name]: value,
+        // })
+
+        if (name ==="name"){
+            setFormState({...formState, name: value})
+        }
+
+        if (name ==="type"){
+            setFormState({...formState, type: value})
+        }
+
+        if (name ==="squareFootage"){
+            setFormState({...formState, squareFootage: parseInt(value)})
+        }
+
+        if (name ==="address"){
+            setFormState({...formState, address: value})
+        }
+
+        if (name ==="city"){
+            setFormState({...formState, city: value})
+        }
+
+        if (name ==="state"){
+            setFormState({...formState, state: value})
+        }
+
+        if (name ==="zip"){
+            setFormState({...formState, zip: value})
+        }
+
+        if (name ==="owner"){
+            setFormState({...formState, owner: value})
+        }
         
     }
     

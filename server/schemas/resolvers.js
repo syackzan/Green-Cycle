@@ -63,8 +63,15 @@ const resolvers = {
             return await GeneralContractor.create({ companyName, address, city, state, zip, phoneNumber, email, password })
         },
 
-        addProject: async(parent, { name, type, squareFootage, address, city, state, zip, owner }) => {
-            return await Project.create({ name, type, squareFootage, address, city, state, zip, owner });
+        addProject: async(parent, { name, type, squareFootage, address, city, state, zip, owner }, context) => {
+             const project = await Project.create({ name, type, squareFootage, address, city, state, zip, owner });
+
+             await GeneralContractor.findOneAndUpdate(
+                 {_id: context.user._id},
+                 {$addToSet: { projects: project._id}}
+             )
+
+             return project;
         },
 
         addItem: async (parent, { material, quantity, unit, notes, recycler}) => {

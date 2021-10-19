@@ -6,10 +6,14 @@ import Auth from '../../utils/auth';
 
 function Header () {
 
+
     const logout = (event) => {
         //event.preventDefault();
         Auth.logout();
     }
+
+    let { data } = Auth.getContractor();
+    
 
     return (
         <header className="headerStyle">
@@ -25,7 +29,7 @@ function Header () {
                     {Auth.loggedIn() ? (
                         <>
                         <li className='nav-item'>
-                        <Link className="navStyle" to='/dashboard'>Dashboard</Link>
+                        <Link className="navStyle" to={`/dashboard/${data._id}`}>Dashboard</Link>
                         </li>
                         <li className='nav-item'>
                         <Link className="navStyle" to='/' onClick={() => logout()}>Logout</Link>
