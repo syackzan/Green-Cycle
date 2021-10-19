@@ -98,6 +98,7 @@ function Project() {
         variables: { id: projectId },
     });
     const project = data?.project || [];
+    console.log(project);
 
     //Waiting Text if still Loading
     if (loading) {
