@@ -41,11 +41,11 @@ function Steel ({ project }){
                 </div>
             </div>
             {list.map((item) => (
-                <div className="printList">
+                <div className="printList" key={item._id}>
                     <div className="centerText2"><b>Notes:</b> {item.notes}</div>
                     <div className="d-flex justify-content-between p-1 colorS">
                         <p className="m-0 textW"><b>Quanitity:</b> {item.quantity} #</p>
-                        <p className="m-0 textW"><b>Date:</b> {item.date}</p>
+                        <p className="m-0 textW"><b>| Date:</b> {item.date}</p>
                     </div>
                 </div>
             ))}
