@@ -24,4 +24,17 @@ mutation ADD_PROJECT ($name: String!, $type: String!, $squareFootage: Int!, $add
     zip
     owner
   }
+}
+`
+
+export const ADD_ITEM = gql `
+mutation ADD_ITEM ($material: String!, $quantity: String!, $unit: String!, $notes: String!, $recycler: String!){
+  addItem(material: $material, quantity: $quantity, unit: $unit, notes: $notes, recycler: $recycler){
+    material
+    date
+    quantity
+    unit
+    notes
+    recycler
+  }
 }`

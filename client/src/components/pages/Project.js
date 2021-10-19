@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { GET_SINGLE_PROJECT } from '../../utils/queries';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
+
+import { ADD_ITEM } from '../../utils/mutations'
 
 import Concrete from '../Concrete/Concrete';
 import Wood from '../Wood/Wood';
@@ -11,8 +13,73 @@ import Steel from '../Steel/Steel';
 
 function Project() {
 
-    const [display, setDisplay] = useState('');
+    //Form Input Functionality
+    const [formState, setFormState] = useState ({
+        material: '',
+        quantity: '',
+        unit: '',
+        notes: '',
+        recycler: '',
+    })
 
+    // Grabbing Mutation
+    const [addItem, { error }] = useMutation(ADD_ITEM);
+    
+    //Handling Request to Database to Add Item
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const { data } = await addItem({
+                variables: {...formState},
+              })
+              
+            console.log(data);
+            //   window.location.reload();
+              
+        } catch(e){
+            console.log(e);
+        }
+
+        setFormState({
+            material: '',
+            quantity: '',
+            unit: '',
+            notes: '',
+            recycler: '',
+        })
+    }
+
+    // Handling Input Form Data Change
+    const handleChange = (event) => {
+        event.preventDefault();
+        const { name, value } = event.target;
+
+        if (name ==="material"){
+            setFormState({...formState, material: value})
+        }
+
+        if (name ==="quantity"){
+            setFormState({...formState, quantity: value})
+        }
+
+        if (name ==="unit"){
+            setFormState({...formState, unit: value})
+        }
+
+        if (name ==="notes"){
+            setFormState({...formState, notes: value})
+        }
+
+        if (name ==="recycler"){
+            setFormState({...formState, recycler: value})
+        }
+        
+    }
+
+
+    //Toggling between show and off Funcitonality for Add Item Form
+    const [display, setDisplay] = useState('');
     const toggleVisible = async (event) => {
 
         if (!display){
@@ -22,16 +89,17 @@ function Project() {
         }
     }
 
+    //Grabbing Params
     const { projectId } = useParams();
     console.log(projectId);
 
+    //Query Items for a Single Project
     const { loading, data } = useQuery(GET_SINGLE_PROJECT, {
         variables: { id: projectId },
     });
-
-    console.log(data);
     const project = data?.project || [];
 
+    //Waiting Text if still Loading
     if (loading) {
         return <div>Project Data Loading...</div>
     }
@@ -64,51 +132,53 @@ function Project() {
                                         <Form.Label>Material:</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            placeholder="Enter Project Name..."
-                                            name="name"
-                                            value="{formState.name}"
-                                            onChange="{handleChange}"
+                                            placeholder="Enter Material"
+                                            name="material"
+                                            value={formState.material}
+                                            onChange={handleChange}
                                         />
                                     </Form.Group>
                                     <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
                                         <Form.Label>Quantity:</Form.Label>
                                         <Form.Control
-                                            type="text"
-                                            placeholder="Residential, Commercial..."
-                                            name="type"
-                                            value="{formState.type}"
-                                            onChange="{handleChange}" />
+                                            type="number"
+                                            placeholder="Enter Quantity"
+                                            name="quantity"
+                                            value={formState.quantity}
+                                            onChange={handleChange} />
                                     </Form.Group>
                                     <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
                                         <Form.Label>Unit:</Form.Label>
                                         <Form.Control
-                                            type="number"
-                                            placeholder="8000 ..."
-                                            name="squareFootage"
-                                            value="{formState.squareFootage}"
-                                            onChange="{handleChange}" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
-                                        <Form.Label>Recycler:</Form.Label>
-                                        <Form.Control
                                             type="text"
-                                            placeholder="Enter Street Name..."
-                                            name="address"
-                                            value="{formState.address}"
-                                            onChange="{handleChange}" />
+                                            placeholder="Unit Type..."
+                                            name="unit"
+                                            value={formState.unit}
+                                            onChange={handleChange} />
                                     </Form.Group>
                                     <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
                                         <Form.Label>Notes:</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            placeholder="Enter City..."
-                                            name="city"
-                                            value="{formState.city}"
-                                            onChange="{handleChange}" />
+                                            placeholder="Enter Short Description..."
+                                            name="notes"
+                                            value={formState.notes}
+                                            onChange={handleChange} />
                                     </Form.Group>
-                                    <button onClick="{handleFormSubmit}">
-                                        Submit
-                                    </button>
+                                    <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                                        <Form.Label>Recycler:</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Recycling Company..."
+                                            name="recycler"
+                                            value={formState.recycler}
+                                            onChange={handleChange} />
+                                    </Form.Group>
+                                    <div className="d-flex align-items-end m-1">
+                                        <button className="fitContent" onClick={handleFormSubmit}>
+                                            Submit
+                                        </button>
+                                    </div>
                                 </Form>
                             </div>
                             <div className="d-flex row m-0">

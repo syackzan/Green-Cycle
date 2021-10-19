@@ -220,6 +220,10 @@
   display: block;
 }
 
+.fitContent {
+  height: fit-content;
+}
+
 .displayNo {
   display: none;
 }
