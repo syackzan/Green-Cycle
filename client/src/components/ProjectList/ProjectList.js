@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 
 function ProjectList ({contractor}) {
     
-
-    
-    
     return (
         <div className="d-flex flex-wrap projectCardsBackground">
             {contractor.projects.map((project) => (
-            <div className="individualProjectCard flex-fill">
+            <div key={project._id} className="individualProjectCard flex-fill">
                 <div>
                     <div className="aTop">
                         <h4 className="m-0">{project.name}</h4>

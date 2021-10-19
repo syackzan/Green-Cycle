@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_SINGLE_CONTRACTOR } from '../../utils/queries';
 
-import  ProjectList  from '../ProjectList/ProjectList'
+import  ProjectList  from '../ProjectList/ProjectList';
+import CreateNewProject from '../CreateNewProject/CreateNewProject';
+import Analytics from '../Analytics/Analytics'; 
 
 function Dashboard (){
     
@@ -42,7 +44,12 @@ function Dashboard (){
                         </div>
                     </div>
                     <div className="col-md-6">
-                        
+                        <div className="row">
+                            <CreateNewProject />
+                        </div>
+                        <div className="row">
+                            <Analytics />
+                        </div>
                     </div>
                 </div>
             </div>
