@@ -13,7 +13,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_PROJECT = gql `
-mutation ADD_PROJECT ($name: String!, $type: String!, $squareFootage: String!, $address: String!, $city: String!, $state: String!, $zip: String!, $owner: String!) {
+mutation ADD_PROJECT ($name: String!, $type: String!, $squareFootage: Int!, $address: String!, $city: String!, $state: String!, $zip: String!, $owner: String!) {
   addProject (name: $name, type: $type, squareFootage: $squareFootage, address: $address, city: $city, state: $state, zip: $zip, owner: $owner ) {
     name
     type

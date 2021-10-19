@@ -2,7 +2,7 @@
     {
         "name": "Two Story Residential Home",
         "type": "Residential",
-        "squareFootage": "7,000",
+        "squareFootage": 7000,
         "address": "252 Main Street",
         "city": "Los Angeles",
         "state": "CA",
@@ -14,7 +14,7 @@
     {
         "name": "Philz Coffee Buildout",
         "type": "Commercial",
-        "squareFootage": "3,500",
+        "squareFootage": 3500,
         "address": "801 S Hope St Unit A",
         "city": "Los Angeles",
         "state": "CA",
@@ -26,7 +26,7 @@
     {
         "name": "Kaiser MRI Ward",
         "type": "Commercial",
-        "squareFootage": "20,000",
+        "squareFootage": 20000,
         "address": "Rosa Parks Fwy",
         "city": "Los Angeles",
         "state": "CA",
@@ -38,7 +38,7 @@
     {
         "name": "Bay View Apartments",
         "type": "Commercial",
-        "squareFootage": "7,000",
+        "squareFootage": 7000,
         "address": "1312 Chestnut St",
         "city": "San Francisco",
         "state": "CA",

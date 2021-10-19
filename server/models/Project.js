@@ -13,7 +13,7 @@ const projectSchema = new Schema({
         trim: true
     },
     squareFootage: {
-        type: String,
+        type: Number,
         required: true,
         trim: true
     },
@@ -54,8 +54,9 @@ const projectSchema = new Schema({
             ref: "Item"
         }
     ]
-})
+});
 
 const Project = model('Project', projectSchema);
 
 module.exports = Project;
+

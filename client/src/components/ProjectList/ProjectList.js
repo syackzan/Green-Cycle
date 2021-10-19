@@ -48,7 +48,7 @@ function ProjectList ({contractor}) {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center viewProjectBtn">
-                        <Link className="noStyle" to={`/projects/${project._id}`}>
+                        <Link className="noStyle" to={`/project/${project._id}`}>
                         <button className="viewProjectBtn">Click Here To See Details</button>
                         </Link>
                     </div>

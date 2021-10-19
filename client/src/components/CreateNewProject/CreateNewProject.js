@@ -9,7 +9,7 @@ function CreateNewProject() {
     const [formState, setFormState] = useState({
         name: '',
         type: '',
-        squareFootage: '',
+        squareFootage: 0,
         address: '',
         city: '',
         state: '',
@@ -36,7 +36,7 @@ function CreateNewProject() {
         setFormState({
             name: '',
             type: '',
-            squareFootage: '',
+            squareFootage: 0,
             address: '',
             city: '',
             state: '',
@@ -49,10 +49,12 @@ function CreateNewProject() {
         event.preventDefault();
         const { name, value } = event.target;
 
+        
         setFormState({
             ...formState,
             [name]: value,
         })
+        
     }
     
     return (
@@ -86,8 +88,8 @@ function CreateNewProject() {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Square Footage:</Form.Label>
                     <Form.Control
-                        type="text"
-                        placeholder="8,000 ..."
+                        type="number"
+                        placeholder="8000 ..."
                         name="squareFootage"
                         value={formState.squareFootage}
                         onChange={handleChange} />
@@ -122,7 +124,7 @@ function CreateNewProject() {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Zip:</Form.Label>
                     <Form.Control
-                        type="text"
+                        type="number"
                         placeholder="Enter a Zip..."
                         name="zip"
                         value={formState.zip}

@@ -9,6 +9,7 @@ import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import AboutUs from '../pages/AboutUs';
 import Dashboard from '../pages/Dashboard';
+import Project from '../pages/Project'
 
 function GreenCycle () {
     return (
@@ -25,6 +26,9 @@ function GreenCycle () {
           </Route>
           <Route exact path="/dashboard/:contractorId">
             <Dashboard />
+          </Route>
+          <Route exact path="project/:projectId">
+            <Project />
           </Route>
           <Footer />
         </div>
