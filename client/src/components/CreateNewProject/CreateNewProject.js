@@ -32,6 +32,17 @@ function CreateNewProject() {
         } catch(e){
             console.log(e);
         }
+
+        setFormState({
+            name: '',
+            type: '',
+            squareFootage: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: '',
+            owner: ''
+        })
     }
 
     const handleChange = (event) => {
