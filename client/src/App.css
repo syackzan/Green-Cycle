@@ -116,6 +116,11 @@
   text-decoration: none;
 }
 
+.noStyle {
+  text-decoration:none;
+  width: 100%;
+}
+
 /* Making Button Not Visible During Web Application */
 .phoneDisplay {
   display: none;
@@ -279,6 +284,12 @@
   color: rgb(233, 227, 227);
   line-height: auto;
   text-align: center;
+}
+
+.viewProjectBtn {
+  width: 100%;
+  background-color: darkgrey;
+  color: black;
 }
 
 /* Footer Styling/Fixing footer to bottom of page */
