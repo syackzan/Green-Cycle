@@ -300,8 +300,14 @@
   color: black;
 }
 
+/* PROJECT SPECIFIC & ITEM LIST STYLING */
+.itemListBorder {
+  border: 1px solid black;
+}
+
 /* Footer Styling/Fixing footer to bottom of page */
 .footer {
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;

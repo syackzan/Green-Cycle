@@ -30,6 +30,8 @@ function GreenCycle () {
           <Route exact path="/project/:projectId">
             <Project />
           </Route>
+          <br/>
+          <br/>
           <Footer />
         </div>
     )
