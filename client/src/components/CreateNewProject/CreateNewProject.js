@@ -27,8 +27,8 @@ function CreateNewProject() {
                 variables: {...formState},
               })
               
-              console.log(data);
-              //window.location.reload();
+              window.location.reload();
+              
         } catch(e){
             console.log(e);
         }
@@ -48,12 +48,6 @@ function CreateNewProject() {
     const handleChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
-
-        
-        // setFormState({
-        //     ...formState,
-        //     [name]: value,
-        // })
 
         if (name ==="name"){
             setFormState({...formState, name: value})

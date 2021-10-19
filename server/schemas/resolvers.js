@@ -66,7 +66,7 @@ const resolvers = {
         addProject: async(parent, { name, type, squareFootage, address, city, state, zip, owner }, context) => {
              const project = await Project.create({ name, type, squareFootage, address, city, state, zip, owner });
 
-             await GeneralContractor.findOneAndUpdate(
+             const gc = await GeneralContractor.findOneAndUpdate(
                  {_id: context.user._id},
                  {$addToSet: { projects: project._id}}
              )
