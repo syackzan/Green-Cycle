@@ -3,6 +3,10 @@ import { GET_SINGLE_PROJECT } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 
+import Concrete from '../Concrete/Concrete';
+import Wood from '../Wood/Wood';
+import Steel from '../Steel/Steel';
+
 
 function Project() {
 
@@ -26,7 +30,7 @@ function Project() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="contractorCard mainBorder">
+                        <div className="contractorCard">
                             <div className="cCardHeader d-flex p-1 justify-content-between">
                                 <div>
                                     <h2>{project.name}</h2>
@@ -39,10 +43,16 @@ function Project() {
                                     <button>Add New Item</button>
                                 </div>
                             </div>
-                            <div className="cCardHeader d-flex row m-0">
-                                <div className="col-4 itemListBorder">Concrete</div>
-                                <div className="col-4 itemListBorder">Wood</div>
-                                <div className="col-4 itemListBorder">Steel</div>
+                            <div className="d-flex row m-0">
+                                <div className="col-4 itemListBorder m-0 p-0">
+                                    <Concrete project={project} />
+                                </div>
+                                <div className="col-4 itemListBorder m-0 p-0">
+                                    <Wood project={project} />
+                                </div>
+                                <div className="col-4 itemListBorder m-0 p-0">
+                                    <Steel project={project} />
+                                </div>
                             </div>
                         </div>
                     </div>

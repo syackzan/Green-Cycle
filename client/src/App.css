@@ -301,9 +301,46 @@
 }
 
 /* PROJECT SPECIFIC & ITEM LIST STYLING */
-.itemListBorder {
+.fullBorder {
   border: 1px solid black;
 }
+
+.fullBorder {
+  border: 2px solid black;
+}
+
+.printList {
+  border: 1px solid black;
+  border-bottom: 3px solid black;
+}
+
+.recycleType2 {
+  margin: 0px;
+  padding-left: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(233, 227, 227);
+}
+
+.centerText {
+  margin: 0px;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+  color: rgb(131, 51, 51);
+}
+
+.centerText2 {
+  margin: 0px;
+  text-align: center;
+  padding: 1px;
+  background-color:lightgrey;
+}
+
+.textW {
+  color: rgb(233, 227, 227);
+}
+
 
 /* Footer Styling/Fixing footer to bottom of page */
 .footer {
