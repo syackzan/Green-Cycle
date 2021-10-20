@@ -29,25 +29,36 @@ function Project() {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
-        try {
-            const { data } = await addItem({
-                variables: {...formState, id: project._id},
-              })
-              
-            console.log(data);
-            //   window.location.reload();
-              
-        } catch(e){
-            console.log(e);
+        if(formState.material === "Select"){
+            alert("Must select a material");
+            return;
         }
 
-        setFormState({
-            material: '',
-            quantity: '',
-            unit: '',
-            notes: '',
-            recycler: '',
-        })
+        // Wrap in an if statement that confirms all the input values were entered correctly
+        if(formState.material && formState.quantity && formState.unit && formState.notes && formState.recycler){
+            try {
+                const { data } = await addItem({
+                    variables: {...formState, id: project._id},
+                  })
+                  
+                
+                  window.location.reload();
+                  
+            } catch(e){
+                console.log(e);
+            }
+    
+            setFormState({
+                material: '',
+                quantity: '',
+                unit: '',
+                notes: '',
+                recycler: '',
+            })
+        } else {
+            alert("Add Item Not Filled Out Correctly");
+            return
+        }
     }
 
     // Handling Input Form Data Change
@@ -60,7 +71,7 @@ function Project() {
         }
 
         if (name ==="quantity"){
-            setFormState({...formState, quantity: value})
+            setFormState({...formState, quantity: parseInt(value)})
         }
 
         if (name ==="unit"){
@@ -91,14 +102,14 @@ function Project() {
 
     //Grabbing Params
     const { projectId } = useParams();
-    console.log(projectId);
+    
 
     //Query Items for a Single Project
     const { loading, data } = useQuery(GET_SINGLE_PROJECT, {
         variables: { id: projectId },
     });
     const project = data?.project || [];
-    console.log(project);
+    
 
     //Waiting Text if still Loading
     if (loading) {
@@ -131,13 +142,12 @@ function Project() {
                                 <Form className=" d-flex flex-fill flex-wrap" >
                                     <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicEmail">
                                         <Form.Label>Material:</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Enter Material"
-                                            name="material"
-                                            value={formState.material}
-                                            onChange={handleChange}
-                                        />
+                                        <Form.Select name="material" value={formState.material} onChange={handleChange}>
+                                            <option>Select</option>
+                                            <option value="Concrete">Concrete</option>
+                                            <option value="Wood">Wood</option>
+                                            <option value="Steel">Steel</option> 
+                                        </Form.Select>
                                     </Form.Group>
                                     <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
                                         <Form.Label>Quantity:</Form.Label>

@@ -14,15 +14,15 @@ class AuthService {
     return token ? true : false;
   }
 
-  // check to see if 'token' is expired
-  // isTokenExpired(token) {
-  //   const decoded = decode(token);
-  //   if (decoded.exp < (Date.now()/1000)) {
-  //     localStorage.removeItem('id_token');
-  //     return true;
-  //   }
-  //   return false;
-  // }
+  //check to see if 'token' is expired
+  isTokenExpired(token) {
+    const decoded = decode(token);
+    if (decoded.exp < (Date.now()/1000)) {
+      localStorage.removeItem('id_token');
+      return true;
+    }
+    return false;
+  }
 
   getToken() {
     // Retrieves the user token from localStorage

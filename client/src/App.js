@@ -8,7 +8,7 @@ import {
   createHttpLink,
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 //Importing All Components & Pages
 import GreenCycle from './components/GreenCycle/GreenCycle'

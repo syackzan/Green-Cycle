@@ -5,14 +5,21 @@ import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
 function Header () {
-
+    
+    let urlId;
 
     const logout = (event) => {
         //event.preventDefault();
         Auth.logout();
     }
 
-    let { data } = Auth.getContractor();
+    if(Auth.loggedIn){
+        let { data } = Auth.getContractor();
+        urlId = data._id;
+    } else {
+        urlId = "";
+    }
+    
     
 
     return (
@@ -29,7 +36,7 @@ function Header () {
                     {Auth.loggedIn() ? (
                         <>
                         <li className='nav-item'>
-                        <Link className="navStyle" to={`/dashboard/${data._id}`}>Dashboard</Link>
+                        <Link className="navStyle" to={`/dashboard/${urlId}`}>Dashboard</Link>
                         </li>
                         <li className='nav-item'>
                         <Link className="navStyle" to='/' onClick={() => logout()}>Logout</Link>

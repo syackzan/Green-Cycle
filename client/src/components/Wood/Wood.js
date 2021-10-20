@@ -5,7 +5,7 @@ function Wood ({ project }){
     let list = [];
     let accu = 0;
     
-    const concreteList = project.recycleItems.map(item => {
+    const woodList = project.recycleItems.map(item => {
         if(item.material === "Wood"){
             list.push(item);
         }
@@ -16,8 +16,6 @@ function Wood ({ project }){
         let number = parseInt(list[i].quantity)
         accu = accu + number;
     }
-
-    console.log(list);
 
     if(!list[0]){
         return (

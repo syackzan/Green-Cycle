@@ -17,8 +17,6 @@ function Steel ({ project }){
         accu = accu + number;
     }
 
-    console.log(list);
-
     if(!list[0]){
         return (
             <div className="">
@@ -37,7 +35,7 @@ function Steel ({ project }){
                     <p className="recycleType2 m-0">Steel</p>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <p className="recycleType2 m-0">Total: {accu} LF</p>
+                    <p className="recycleType2 m-0">Total: {accu} #</p>
                 </div>
             </div>
             {list.map((item) => (

@@ -17,8 +17,6 @@ function Concrete ({ project }){
         accu = accu + number;
     }
 
-    console.log(list);
-
     if(!list[0]){
         return (
             <div className="colorC">
