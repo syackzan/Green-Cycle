@@ -359,6 +359,25 @@
   color: rgb(233, 227, 227);
 }
 
+.styleItemLink {
+  color: white;
+  border: 2px solid black;
+  padding: 0px 3px;
+  background-color:rgb(61, 58, 58);
+}  
+
+/* STYLING ITEM PAGE */
+
+.mainItemBorder {
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.bottomBorder {
+  border-bottom: 2px solid white;
+
+}
+
 
 /* Footer Styling/Fixing footer to bottom of page */
 .footer {
@@ -422,4 +441,11 @@
 
 .noStyle:hover {
   opacity: 50%;
+}
+
+.styleItemLink:hover {
+  background-color: lightgray;
+  transform:scale(1.1,1.1);
+  -webkit-transform:scale(1.1,1.1);
+  -moz-transform:scale(1.1,1.1);
 }

@@ -61,6 +61,7 @@ const typeDefs = gql`
         updateCompany(contractorId: ID!, companyName: String!, address: String!, city: String!, state: String!, zip: String!, phoneNumber: String!, email: String!, password: String!): GeneralContractor
         updateProject(projectId: ID!, name: String!, type: String!, squareFootage: Int!, address: String!, city: String!, state: String!, zip: String!, owner: String!): Project
         updateItem(itemId: ID!, material: String!, quantity: Int!, unit: String!, notes: String!, recycler: String!): Item
+        removeItem(itemId: ID!): Item
     }
 `;
 

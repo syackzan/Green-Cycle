@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 function Wood ({ project }){
 
     let list = [];
@@ -42,8 +44,9 @@ function Wood ({ project }){
                 <div className="printList" key={item._id}>
                     <div className="centerText2"><b>Notes:</b> {item.notes}</div>
                     <div className="d-flex justify-content-between p-1 colorW">
-                        <p className="m-0 textW"><b>Quanitity:</b> {item.quantity} LF </p>
-                        <p className="m-0 textW"><b>| Date:</b> {item.date}</p>
+                        <div><p className="m-0 textW"><b>Quanitity:</b> {item.quantity} cf </p></div>
+                        <div><p className="m-0 textW"><b>| Date:</b> {item.date}</p></div>
+                        <div><Link className="noStyle styleItemLink" to={`/item/${item._id}`}>Edit</Link></div>
                     </div>
                 </div>
             ))}

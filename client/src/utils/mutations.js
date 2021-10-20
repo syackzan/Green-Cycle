@@ -52,3 +52,23 @@ mutation ADD_ITEM ($id: ID, $material: String!, $quantity: Int!, $unit: String!,
     recycler
   }
 }`
+
+export const UPDATE_ITEM = gql `
+mutation UPDATE_ITEM ($id: ID!, $material: String!, $quantity: Int!, $unit: String!, $notes: String!, $recycler: String!){
+  updateItem(itemId: $id, material: $material, quantity: $quantity, unit: $unit, notes: $notes, recycler: $recycler){
+    material
+    date
+    quantity
+    unit
+    notes
+    recycler
+  }
+}
+`
+
+export const REMOVE_ITEM = gql `
+mutation REMOVE_ITEM($id: ID!) {
+  deleteItem(itemId: $id){
+    material
+  }
+}`

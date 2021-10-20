@@ -108,6 +108,10 @@ const resolvers = {
                 { new: true}
                 );
         },
+
+        removeItem: async (parent, { itemId }) => {
+            return Item.findOneAndDelete({_id: itemId})
+        }
     }
 }
 
