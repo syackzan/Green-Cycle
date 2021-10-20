@@ -30,7 +30,7 @@ function Header () {
                         <Link className="navStyle" to={`/dashboard/${Auth.getContractor().data._id}`}>Dashboard</Link>
                         </li>
                         <li className='nav-item'>
-                        <Link className="navStyle" onClick={async () => await logout()}>Logout</Link>
+                        <Link className="navStyle" to="#" onClick={async () => await logout()}>Logout</Link>
                         </li>
                         <li className='nav-item'>
                         <Link className="navStyle" to='/aboutus'>About Us</Link>

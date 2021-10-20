@@ -40,7 +40,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <GreenCycle />
+        <GreenCycle className="htmlBackground" />
       </Router>
     </ApolloProvider>
   );

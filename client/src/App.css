@@ -37,13 +37,15 @@
   }
 } */
 
-
-
 :root {
   --navColor: rgb(40, 134, 40);
   --concrete: slategray;
   --wood: #663300;
   --steel: #b7410e;
+}
+
+.htmlBackground {
+  background-color: #bebdbd
 }
 
 /* Universal Border Used on Pages */
@@ -229,6 +231,15 @@
 
 .displayNo {
   display: none;
+}
+
+.spaceM {
+  margin-top: 25px
+}
+
+/* ANALYTICS FORMATTING */
+.styleGraph {
+  position: relative;
 }
 
 /* PROJECTLIST FORMATTING */

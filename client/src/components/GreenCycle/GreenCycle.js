@@ -13,7 +13,7 @@ import Project from '../pages/Project'
 
 function GreenCycle () {
     return (
-        <div className="">
+        <div>
           <Header />
           <Route exact path="/">
             <Login />

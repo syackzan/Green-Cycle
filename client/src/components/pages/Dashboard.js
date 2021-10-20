@@ -22,14 +22,12 @@ function Dashboard (){
     }
 
     const { contractorId } = useParams();
-    console.log(contractorId);
 
     const { loading, data } = useQuery (GET_SINGLE_CONTRACTOR, {
         variables: { id: contractorId },
     });
 
     const contractor = data?.contractor || [];
-    console.log(contractor);
 
     if(loading) {
         return <div>Loading...</div>
@@ -64,7 +62,7 @@ function Dashboard (){
                             <CreateNewProject />
                         </div>
                         <div className="row">
-                            <Analytics />
+                            <Analytics contractor={contractor} />
                         </div>
                     </div>
                 </div>
