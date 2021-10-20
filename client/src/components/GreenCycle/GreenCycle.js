@@ -31,7 +31,7 @@ function GreenCycle () {
           <Route exact path="/project/:projectId">
             <Project />
           </Route>
-          <Route exact path="/item/:itemId">
+          <Route exact path="/item/:projectId/:itemId">
             <Item />
           </Route>
           <br/>

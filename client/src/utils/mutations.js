@@ -66,8 +66,8 @@ mutation UPDATE_ITEM ($id: ID!, $material: String!, $quantity: Int!, $unit: Stri
 }
 `
 
-export const REMOVE_ITEM = gql `
-mutation REMOVE_ITEM($id: ID!) {
+export const DELETE_ITEM = gql `
+mutation DELETE_ITEM($id: ID!) {
   deleteItem(itemId: $id){
     material
   }

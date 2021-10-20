@@ -45,12 +45,17 @@
 }
 
 .htmlBackground {
-  background-color: #bebdbd
+  background-color: #6d6c6c
 }
 
 /* Universal Border Used on Pages */
 .mainBorder {
   border: 2px solid var(--navColor);
+  border-radius: 5px;
+}
+
+.blackBorder {
+  border: 5px solid black;
   border-radius: 5px;
 }
 
@@ -376,6 +381,10 @@
 .bottomBorder {
   border-bottom: 2px solid white;
 
+}
+
+.deleteBtn {
+  background-color: darkred;
 }
 
 

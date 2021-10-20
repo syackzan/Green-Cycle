@@ -46,7 +46,7 @@ function Steel ({ project }){
                     <div className="d-flex justify-content-between p-1 colorS">
                         <div><p className="m-0 textW"><b>Quanitity:</b> {item.quantity} # </p></div>
                         <div><p className="m-0 textW"><b>| Date:</b> {item.date}</p></div>
-                        <div><Link className="noStyle styleItemLink" to={`/item/${item._id}`}>Edit</Link></div>
+                        <div><Link className="noStyle styleItemLink" to={`/item/${project._id}/${item._id}`}>Edit</Link></div>
                     </div>
                 </div>
             ))}
