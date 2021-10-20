@@ -8,17 +8,16 @@ import { GET_SINGLE_ITEM } from '../../utils/queries';
 import { UPDATE_ITEM } from '../../utils/mutations';
 import { DELETE_ITEM } from '../../utils/mutations';
 
-import { Link } from 'react-router-dom';
-
 function Item() {
 
     let background;
 
     const { itemId } = useParams();
-    console.log(itemId);
+    const { projectId } = useParams();
 
-    const [deleteItem, { e }] = useMutation(DELETE_ITEM)
-    const [updateItem, { error }] = useMutation(UPDATE_ITEM)
+    
+    const [deleteItem, { error }] = useMutation(DELETE_ITEM)
+    const [updateItem, { e }] = useMutation(UPDATE_ITEM)
 
     const { loading, data } = useQuery(GET_SINGLE_ITEM, {
         variables: { id: itemId }
@@ -31,7 +30,7 @@ function Item() {
     } else if (item.material === "Concrete") {
         background = "colorC"
     } else if (item.material === "Steel") {
-        background = "ColorS"
+        background = "colorS"
     } else {
         background = "none";
     }
@@ -65,7 +64,6 @@ function Item() {
             } catch (e) {
                 console.log(e);
             }
-
         } else {
             alert("Add Item Not Filled Out Correctly");
             return
@@ -99,13 +97,21 @@ function Item() {
 
     }
 
-    // const handleDeleteItem = (event) => {
-    //     event.preventDefault();
+    const handleDeleteItem = async (event) => {
+        event.preventDefault();
 
-    //     const { data } = deleteItem({
-    //         variables: { id: itemId, id2: projectId},
-    //     })
-    // }
+        try {
+            const { data } = await deleteItem({
+                variables: { id: itemId, id2: projectId},
+            })
+
+            window.location.assign(`/project/${projectId}`);
+        } catch(e){
+            console.log(e);
+        }
+
+
+    }
 
 
     //Toggling between show and off Funcitonality for Add Item Form
@@ -209,7 +215,7 @@ function Item() {
                                             </button>
                                         </div>
                                         <div>
-                                            <button className="fitContent deleteBtn textW" onClick='{handleDeleteItem}'>
+                                            <button className="fitContent deleteBtn textW" onClick={handleDeleteItem}>
                                                 Delete
                                             </button>
                                         </div>

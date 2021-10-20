@@ -109,8 +109,15 @@ const resolvers = {
                 );
         },
 
-        removeItem: async (parent, { itemId }) => {
-            return Item.findOneAndDelete({_id: itemId})
+        deleteItem: async (parent, { itemId, projectId }) => {
+            const deletedItem = Item.findOneAndDelete({_id: itemId})
+
+            const projectUpdate = Project.findByIdAndUpdate(
+                {_id: projectId},
+                { $pull: { recycleItems: itemId}}
+            )
+
+            return projectUpdate;
         }
     }
 }
