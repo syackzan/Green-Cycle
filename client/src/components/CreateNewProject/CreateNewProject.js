@@ -26,6 +26,17 @@ function CreateNewProject() {
             const { data } = await addProject({
                 variables: {...formState},
               })
+
+              setFormState({
+                name: '',
+                type: '',
+                squareFootage: 0,
+                address: '',
+                city: '',
+                state: '',
+                zip: '',
+                owner: ''
+            })
               
               window.location.reload();
               
@@ -33,16 +44,6 @@ function CreateNewProject() {
             console.log(e);
         }
 
-        setFormState({
-            name: '',
-            type: '',
-            squareFootage: 0,
-            address: '',
-            city: '',
-            state: '',
-            zip: '',
-            owner: ''
-        })
     }
 
     const handleChange = (event) => {

@@ -7,6 +7,19 @@ const generalContractorSchema = new Schema({
         unique: true,
         trim: true,
     },
+    email: {
+        type: String,
+        trim: true,
+        lowercase: true,
+        unique: true,
+        required: 'Email address is required',
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+    },
+    password: {
+        type: String,
+        required: 'Password is required',
+        minLenth: 8
+    },
     address: {
         type: String,
         required: true,
@@ -31,19 +44,6 @@ const generalContractorSchema = new Schema({
         type: String,
         required: false,
         trim: true
-    },
-    email: {
-        type: String,
-        trim: true,
-        lowercase: true,
-        unique: true,
-        required: 'Email address is required',
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
-    },
-    password: {
-        type: String,
-        required: 'Password is required',
-        minLenth: 8
     },
     projects: [
         {

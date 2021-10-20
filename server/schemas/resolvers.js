@@ -59,8 +59,8 @@ const resolvers = {
               return { token, contractor }
         },
 
-        addCompany: async (parent, { companyName, address, city, state, zip, phoneNumber, email, password }) => {
-            return await GeneralContractor.create({ companyName, address, city, state, zip, phoneNumber, email, password })
+        addCompany: async (parent, { companyName, email, password, address, city, state, zip, phoneNumber }) => {
+            return await GeneralContractor.create({ companyName, email, password, address, city, state, zip, phoneNumber })
         },
 
         addProject: async(parent, { name, type, squareFootage, address, city, state, zip, owner }, context) => {

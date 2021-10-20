@@ -12,6 +12,20 @@ export const LOGIN_USER = gql`
   }
 `;
 
+export const ADD_COMPANY = gql `
+mutation ADD_COMPANY ($companyName: String!, $address: String!, $city: String!, $state: String!, $zip: String!, $phoneNumber: String!, $email: String!, $password: String!){
+  addCompany(companyName: $companyName, address: $address, city: $city, state: $state, zip: $zip, phoneNumber: $phoneNumber, email: $email, password: $password){
+    companyName
+    address
+    city
+    state
+    zip
+    phoneNumber
+    email
+    password
+  }
+}`
+
 export const ADD_PROJECT = gql `
 mutation ADD_PROJECT ($name: String!, $type: String!, $squareFootage: Int!, $address: String!, $city: String!, $state: String!, $zip: String!, $owner: String!) {
   addProject (name: $name, type: $type, squareFootage: $squareFootage, address: $address, city: $city, state: $state, zip: $zip, owner: $owner ) {

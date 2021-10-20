@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form'
 
+import { useMutation } from '@apollo/client';
+import { ADD_COMPANY } from '../../utils/mutations';
+
+
 
 function SignUp() {
 
@@ -8,12 +12,44 @@ function SignUp() {
         companyName: '',
         email: '',
         password: '',
-        addres: '',
+        address: '',
         city: '',
         state: '',
         zip: '',
-        number: '',
+        phoneNumber: '',
     })
+
+    const [addContractor, { error }] = useMutation(ADD_COMPANY);
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        console.log(formState);
+        try {
+            const { data } = await addContractor({
+                variables: {...formState},
+            }) 
+            console.log(data);
+
+            setFormState({
+                companyName: '',
+                email: '',
+                password: '',
+                address: '',
+                city: '',
+                state: '',
+                zip: '',
+                phoneNumber: '',
+            })
+
+            // window.location.assign('/')
+
+        } catch (e) {
+            console.log(e);
+        }
+
+        
+    }
 
     function handleChange(event){
         event.preventDefault();
@@ -22,7 +58,7 @@ function SignUp() {
         setFormState({
             ...formState,
             [name]: value,
-        })
+        });
     }
 
     return (
@@ -115,6 +151,9 @@ function SignUp() {
                                             </Form.Group>
                                         </Form.Group>
                                     </Form.Group>
+                                    <button onClick={handleFormSubmit}>
+                                        Submit
+                                    </button>
                                 </Form>
                             </div>
                         </div>
