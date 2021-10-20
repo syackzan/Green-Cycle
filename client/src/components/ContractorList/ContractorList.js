@@ -1,7 +1,12 @@
 import React from 'react';
+import { GET_SINGLE_CONTRACTOR } from '../../utils/queries';
 
 function ContractorList ({ contractors }) {
     console.log(contractors);
+
+    let concreteTotal = 0;
+    let baseWood = 0;
+    let baseSteel = 0;
 
     if (!contractors.length) {
         return <p>No Top List Yet</p>
@@ -13,6 +18,20 @@ function ContractorList ({ contractors }) {
     const plus = () => {
         count++
     }
+
+
+
+    // contractors.map((contractor) => {
+    //     contractor.projects.map((project) => {
+    //         project.recycleItems.map((item) => {
+    //             if (item.material === "Concrete"){
+    //                 concreteTotal = concreteTotal + item.quantity;
+    //             }
+    //         })
+    //     })
+    // })
+
+    console.log(concreteTotal);
 
     return (
         <div>

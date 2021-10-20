@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import AmountC from '../Amounts/AmountC';
+import AmountS from '../Amounts/AmountS';
+import AmountW from '../Amounts/AmountW';
+
 function ProjectList ({contractor}) {
     
     return (
@@ -28,7 +32,7 @@ function ProjectList ({contractor}) {
                             <p className="m-0 recycleType">Concrete:</p> 
                         </div>
                         <div className="d-flex align-items-center borderLeft col-8">
-                            <p className="m-0 recycleAmount">Amount CY</p>
+                            <AmountC project={project}/>
                         </div>
                     </div>
                     <div className="row d-flex aMiddle m-0">
@@ -36,7 +40,7 @@ function ProjectList ({contractor}) {
                             <p className="m-0 recycleType">Wood:</p> 
                         </div>
                         <div className="d-flex align-items-center borderLeft col-8">
-                            <p className="m-0 recycleAmount">Amount #</p>
+                            <AmountW project={project}/>
                         </div>
                     </div>
                     <div className="row d-flex aMiddle m-0">
@@ -44,7 +48,7 @@ function ProjectList ({contractor}) {
                             <p className="m-0 recycleType">Steel</p> 
                         </div>
                         <div className="d-flex align-items-center borderLeft col-8">
-                            <p className="m-0 recycleAmount">Amount #</p>
+                            <AmountS project={project}/>
                         </div>
                     </div>
                     <div className="d-flex justify-content-center viewProjectBtn">

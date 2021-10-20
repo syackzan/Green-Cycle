@@ -42,7 +42,9 @@ function SignUp() {
                 phoneNumber: '',
             })
 
-            // window.location.assign('/')
+            alert("Succes. You will now be directed to main page to Login")
+
+            window.location.assign('/')
 
         } catch (e) {
             console.log(e);
