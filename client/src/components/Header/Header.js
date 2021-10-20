@@ -13,14 +13,20 @@ function Header () {
         Auth.logout();
     }
 
-    if(Auth.loggedIn){
-        let { data } = Auth.getContractor();
+    // try {
+    //     let { data } = Auth.getContractor();
+    //     let urlId = data._id
+    // } catch (error){
+    //     console.log(error);
+    // }
+
+    const storedToken = localStorage.getItem('token');
+    if(storedToken){
+        const { data } = Auth.getContractor();
         urlId = data._id;
     } else {
         urlId = "";
     }
-    
-    
 
     return (
         <header className="headerStyle">
@@ -39,10 +45,13 @@ function Header () {
                         <Link className="navStyle" to={`/dashboard/${urlId}`}>Dashboard</Link>
                         </li>
                         <li className='nav-item'>
-                        <Link className="navStyle" to='/' onClick={() => logout()}>Logout</Link>
+                        <Link className="navStyle" to='/' onClick={async () => await logout()}>Logout</Link>
                         </li>
                         <li className='nav-item'>
                         <Link className="navStyle" to='/aboutus'>About Us</Link>
+                        </li>
+                        <li className='nav-item'>
+                        <Link className="navStyle" to='/settings'>⚙️</Link>
                         </li>
                         </>
                     // <button onClick={() => logout()}>Button</button>
