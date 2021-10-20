@@ -57,7 +57,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addCompany(companyName: String!, address: String!, city: String!, state: String!, zip: String!, phoneNumber: String!, email: String!, password: String!): GeneralContractor
         addProject(name: String!, type: String!, squareFootage: Int!, address: String!, city: String!, state: String!, zip: String!, owner: String!): Project
-        addItem(material: String!, quantity: String!, unit: String!, notes: String!, recycler: String!): Item
+        addItem(projectId: ID, material: String!, quantity: String!, unit: String!, notes: String!, recycler: String!): Item
         updateCompany(contractorId: ID!, companyName: String!, address: String!, city: String!, state: String!, zip: String!, phoneNumber: String!, email: String!, password: String!): GeneralContractor
         updateProject(projectId: ID!, name: String!, type: String!, squareFootage: Int!, address: String!, city: String!, state: String!, zip: String!, owner: String!): Project
         updateItem(itemId: ID!, material: String!, quantity: String!, unit: String!, notes: String!, recycler: String!): Item

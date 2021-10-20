@@ -31,7 +31,7 @@ function Project() {
 
         try {
             const { data } = await addItem({
-                variables: {...formState},
+                variables: {...formState, id: project._id},
               })
               
             console.log(data);

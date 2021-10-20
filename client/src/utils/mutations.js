@@ -28,8 +28,8 @@ mutation ADD_PROJECT ($name: String!, $type: String!, $squareFootage: Int!, $add
 `
 
 export const ADD_ITEM = gql `
-mutation ADD_ITEM ($material: String!, $quantity: String!, $unit: String!, $notes: String!, $recycler: String!){
-  addItem(material: $material, quantity: $quantity, unit: $unit, notes: $notes, recycler: $recycler){
+mutation ADD_ITEM ($id: ID, $material: String!, $quantity: String!, $unit: String!, $notes: String!, $recycler: String!){
+  addItem(projectId: $id, material: $material, quantity: $quantity, unit: $unit, notes: $notes, recycler: $recycler){
     material
     date
     quantity

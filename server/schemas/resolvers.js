@@ -74,8 +74,15 @@ const resolvers = {
              return project;
         },
 
-        addItem: async (parent, { material, quantity, unit, notes, recycler}) => {
-            return await Item.create({ material, quantity, unit, notes, recycler});
+        addItem: async (parent, { projectId, material, quantity, unit, notes, recycler}) => {
+            const newItem = await Item.create({ material, quantity, unit, notes, recycler});
+
+            const projectAdd = await Project.findOneAndUpdate(
+                {_id: projectId},
+                {$addToSet: { recycleItems: newItem._id }}
+            )
+
+            return projectAdd;
         },
 
         updateCompany: async (parent, { contractorId, companyName, address, city, state, zip, phoneNumber, email, password }) => {
