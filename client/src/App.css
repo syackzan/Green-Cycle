@@ -300,6 +300,7 @@
 
 .mediumFont {
   color: white;
+  font-size: 22px;
   font-weight: bold;
   background-color: var(--navColor);
   padding: 0px;
