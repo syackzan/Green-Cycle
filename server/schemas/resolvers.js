@@ -49,11 +49,11 @@ const resolvers = {
                 throw new AuthenticationError('No profile with this email found!');
               }
         
-            //   const correctPw = await contractor.isCorrectPassword(password);
+              const correctPw = await contractor.isCorrectPassword(password);
         
-            //   if (!correctPw) {
-            //     throw new AuthenticationError('Incorrect password!');
-            //   }
+              if (!correctPw) {
+                throw new AuthenticationError('Incorrect password!');
+              }
         
               const token = signToken(contractor);
               return { token, contractor }
