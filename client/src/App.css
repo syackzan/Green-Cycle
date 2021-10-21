@@ -296,6 +296,7 @@
 .bigFont {
   font-size: 75px;
   color: white;
+  font-weight: bold;
 }
 
 .aboutUsBorder {
