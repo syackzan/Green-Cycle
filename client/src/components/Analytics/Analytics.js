@@ -35,7 +35,7 @@ function Analytics({ contractor }) {
       }
 
     return (
-        <div className="d-flex align-items-center thickBorder styleLogin m-1">
+        <div className="d-flex align-items-center boxShadow styleLogin m-1">
             <div className="d-flex flex-fill chart-container styleGraph">
                 <Bar
                     className="flex-shrink"

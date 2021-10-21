@@ -11,7 +11,7 @@ function AmountW ({ project }){
     })
 
     return(
-        <p className="m-0 recycleAmount">{accumulator} cf</p>
+        <p className="m-0 recycleAmount">{accumulator} CF</p>
     )
 }
 

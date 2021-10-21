@@ -68,8 +68,8 @@ function SignUp() {
             <div className="">
                 <div className="row p-4">
                     <div className="col-md-12 topMargin" >
-                        <div className="d-flex justify-content-center align-items-center sizingLogin thickBorder">
-                            <div className="d-flex align-items-center thickBorder styleLogin">
+                        <div className="d-flex justify-content-center align-items-center sizingLogin boxShadow">
+                            <div className="d-flex align-items-center boxShadow styleLogin">
                                 <Form className="flex-fill" >
                                     <Form.Group className="d-flex justify-content-center">
                                         <Form.Label className="loginHeader">Sign Up Below!</Form.Label>

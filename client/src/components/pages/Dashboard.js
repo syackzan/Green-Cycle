@@ -40,17 +40,17 @@ function Dashboard (){
                     <div className="col-md-6">
                         <div className="row">
                             <div className="col-md-12">
-                                <div className="contractorCard mainBorder">
-                                    <div className="cCardHeader d-flex p-1 justify-content-between">
+                                <div className="contractorCard ">
+                                    <div className="cCardHeader d-flex justify-content-between boxShadow">
                                         <div>
-                                            <h2>{contractor.companyName}</h2>
-                                            <p>{contractor.address}, {contractor.city}, {contractor.state} {contractor.zip}</p>
+                                            <h2 className="textW">{contractor.companyName}</h2>
+                                            <p className="textW">{contractor.address}, {contractor.city}, {contractor.state} {contractor.zip}</p>
                                         </div>
                                         <div className="p-2">
                                             <button onClick={() => toggleVisible()}>Add New Project</button>
                                         </div>
                                     </div>
-                                    <div className="cCardHeader d-flex">
+                                    <div className="cCardBody d-flex boxShadow">
                                         <ProjectList contractor={contractor} />
                                     </div>
                                 </div>
