@@ -46,7 +46,7 @@ function Concrete ({ project }){
                     <div className="d-flex justify-content-around p-1 colorC">
                         <div><p className="m-0 textW"><b>Quanitity:</b> {item.quantity} CY </p></div>
                         <div><p className="m-0 textW"><b>| Date:</b> {item.date}</p></div>
-                        <div><Link className="noStyle styleItemLink" to={`/item/${project._id}/${item._id}`}>Edit</Link></div>
+                        <div><Link className="noStyle styleItemLink" to={`/item/${project._id}/${item._id}`}>Details</Link></div>
                     </div>
                 </div>
             ))}

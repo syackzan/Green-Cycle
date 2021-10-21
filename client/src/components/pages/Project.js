@@ -125,11 +125,11 @@ function Project() {
                         <div className="contractorCard">
                             <div className="cCardHeader d-flex p-1 justify-content-between">
                                 <div>
-                                    <h2>{project.name}</h2>
-                                    <p className="m-0"><b>Location: </b>{project.address}, {project.city}, {project.state} {project.zip}</p>
-                                    <p className="m-0"><b>Type:</b> {project.type}</p>
-                                    <p className="m-0"><b>Size:</b> {project.squareFootage}sf</p>
-                                    <p className="m-0"><b>Owner:</b> {project.owner}</p>
+                                    <h2 className="textW">{project.name}</h2>
+                                    <p className="m-0 textW"><b>Location: </b>{project.address}, {project.city}, {project.state} {project.zip}</p>
+                                    <p className="m-0 textW"><b>Type:</b> {project.type}</p>
+                                    <p className="m-0 textW"><b>Size:</b> {project.squareFootage}sf</p>
+                                    <p className="m-0 textW"><b>Owner:</b> {project.owner}</p>
                                 </div>
                                 <div className="p-2">
                                     <button onClick={() => toggleVisible()}>Add New Item</button>
