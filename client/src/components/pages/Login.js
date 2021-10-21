@@ -56,8 +56,8 @@ function Login() {
 
     return (
         <div className="jumbotron flex-fill">
-            <div className="">
-                <div className="row p-4 d-flex smallScreen">
+            <div className="container-fluid">
+                <div className="row p-4 d-flex smallScreen marginAuto">
                     <div className="col-md-4 topMargin">
                         <div className="boxShadow m-1 brownC">
                             <h1 className="topContractors lowerBorder textW">Top Contractors</h1>
@@ -67,7 +67,7 @@ function Login() {
                     <div className="col-md-8 topMargin" >
                        <div className="d-flex justify-content-center align-items-center sizingLogin boxShadow m-1">
                         <div className="d-flex align-items-center boxShadow styleLogin">
-                                <Form className="flex-fill" >
+                                <Form className="flex-fill overflowt" >
                                     <Form.Group className="d-flex justify-content-center">
                                         <Form.Label className="loginHeader">Login Below!</Form.Label>
                                     </Form.Group>
@@ -93,9 +93,6 @@ function Login() {
                                         name="password"
                                         value={formState.password}
                                         onChange={handleChange} />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="Check me out" />
                                     </Form.Group>
                                     <button onClick={handleFormSubmit}>
                                         Login

@@ -13,7 +13,7 @@ db.once('open', async () => {
     await Item.deleteMany();
 
     // bulk create each model
-    const contractors = await GeneralContractor.insertMany(gcData);
+    const contractors = await GeneralContractor.create(gcData);
     const projects = await Project.insertMany(projectData);
     const items = await Item.insertMany(itemData);
 
@@ -33,8 +33,6 @@ db.once('open', async () => {
     }
 
     // console.log(contractors);
-    // console.log(projects);
-    // console.log(items);
 
     console.log("Complete!");
     process.exit(0);
