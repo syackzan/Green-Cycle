@@ -34,7 +34,7 @@ function ContractorList ({ contractors }) {
     console.log(concreteTotal);
 
     return (
-        <div>
+        <div className="boxShadowLighter">
             {contractors.map((contractor) => (
                 <div key={contractor._id} className="topListStyle">
                     <p className="topListFont">{numbers[count]}. {contractor.companyName}</p>

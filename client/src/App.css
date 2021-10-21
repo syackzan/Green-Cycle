@@ -37,8 +37,16 @@
   }
 } */
 
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 :root {
-  --navColor: rgb(40, 134, 40);
+  --navColor: #435446;
+  --gray9c: #9ca4ac;
+  --navy: #3c4454;
+  --paleG: #5c6c64;
+  --brown: #4c4442;
   --concrete: slategray;
   --wood: #663300;
   --steel: #b7410e;
@@ -46,6 +54,16 @@
 
 .htmlBackground {
   background-color: #6d6c6c
+}
+
+/* Color Palletes */
+
+.navyC {
+  background-color: var(--navy);
+}
+
+.brownC {
+  background-color: var(--brown);
 }
 
 /* Universal Border Used on Pages */
@@ -179,26 +197,47 @@
   text-align: center;
 }
 
+.topContractors {
+  margin: 0px;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+}
+
 .lowerBorder {
-  border-bottom: 2px solid var(--navColor);
-  color: var(--navColor);
+  color: var(--gray9c);
   margin: 0px;
 }
 
 .topListStyle {
   border-bottom: 1px solid var(--navColor);
-  background-color: tan;
+  background-color: #9ca4ac;
+}
+
+.boxShadow {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 18px black;
+  border-radius: 5px;
+}
+
+.boxShadowLighter {
+  border: 1px solid;
+  padding: 0px;
+  box-shadow: 3px 5px 5px black;
+  border-radius: 5px;
 }
 
 .topListFont {
-  font-size: 20px;
-  text-align: center;
+  font-size: 26px;
+  padding-left: 15px;
+  text-align: left;
   font-weight: bold;
   color: black;
 }
 
 .sizingLogin {
-  height: fit-content;
+  height: 80vh;
   padding: 75px 10px;
   background-image: url(https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9ycmVzdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80);
   background-repeat: no-repeat;
@@ -445,6 +484,16 @@
 @media only screen and (max-width: 242px){
   .logo {
     display: none;
+  }
+}
+
+.smallScreen {
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 777px){
+  .smallScreen {
+    flex-direction: column-reverse;
   }
 }
 

@@ -57,16 +57,16 @@ function Login() {
     return (
         <div className="jumbotron flex-fill">
             <div className="">
-                <div className="row p-4">
+                <div className="row p-4 d-flex smallScreen">
                     <div className="col-md-4 topMargin">
-                        <div className="thickBorder">
-                            <h1 className="centerText lowerBorder">Top Contractors</h1>
+                        <div className="boxShadow m-1 brownC">
+                            <h1 className="topContractors lowerBorder textW">Top Contractors</h1>
                             <ContractorList contractors={contractors} />
                         </div>
                     </div>
                     <div className="col-md-8 topMargin" >
-                       <div className="d-flex justify-content-center align-items-center sizingLogin thickBorder">
-                        <div className="d-flex align-items-center thickBorder styleLogin">
+                       <div className="d-flex justify-content-center align-items-center sizingLogin boxShadow m-1">
+                        <div className="d-flex align-items-center boxShadow styleLogin">
                                 <Form className="flex-fill" >
                                     <Form.Group className="d-flex justify-content-center">
                                         <Form.Label className="loginHeader">Login Below!</Form.Label>
