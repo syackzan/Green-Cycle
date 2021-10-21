@@ -523,14 +523,16 @@
   }
 }
 
-.noStyle:hover {
-  transform:scale(1.1,1.1);
-  -webkit-transform:scale(1.1,1.1);
-  -moz-transform:scale(1.1,1.1);
+.viewProjectBtn:hover {
+  background-color: lightgray;
+}
+
+.nav-item:hover {
+  background-color: rgb(228, 222, 222);
 }
 
 .styleItemLink:hover {
-  background-color: lightgray;
+  background-color: rgb(241, 237, 237);
   transform:scale(1.1,1.1);
   -webkit-transform:scale(1.1,1.1);
   -moz-transform:scale(1.1,1.1);

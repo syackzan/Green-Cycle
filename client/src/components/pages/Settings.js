@@ -97,7 +97,7 @@ function Settings() {
 
     return (
         <div className="jumbotron flex-fill">
-            <div className="">
+            <div className="container-fluid">
                 <div className="row p-4">
                     <div className="col-md-12 topMargin" >
                         <div className="d-flex justify-content-center align-items-center sizingLogin boxShadow">
