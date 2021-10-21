@@ -36,11 +36,11 @@ function Item() {
     }
 
     const [formState, setFormState] = useState({
-        material: item.material,
-        quantity: item.quantity,
-        unit: item.unit,
-        notes: item.notes,
-        recycler: item.recycler,
+        material: '',
+        quantity: '',
+        unit: '',
+        notes: '',
+        recycler: '',
     })
 
     const handleFormSubmit = async (event) => {
@@ -123,6 +123,14 @@ function Item() {
         } else {
             await setDisplay('')
         }
+
+        setFormState({
+            material: item.material,
+            quantity: item.quantity,
+            unit: item.unit,
+            notes: item.notes,
+            recycler: item.recycler,
+        })
     }
 
     const toggleVisibleForm = async (event) => {
@@ -134,6 +142,10 @@ function Item() {
         }
     }
 
+    const backItUp = () => {
+        window.location.assign(`/project/${projectId}`);
+    }
+
     return (
         <div className="jumbotron m-2">
             <div className="container">
@@ -142,7 +154,10 @@ function Item() {
                         <div className="contractorCard">
                             <div className={!display ? (`mainItemBorder p-1 ${background} textW`) : ("displayNo")}>
                                 <div>
-                                    <h2 className="bottomBorder">Material: {item.material}</h2>
+                                    <div className="d-flex justify-content-between bottomBorder">
+                                        <div><h2 className="m-0">Material: {item.material}</h2></div>
+                                        <div><button className="styleItemLink" onClick={() => backItUp()}>Back</button></div>
+                                    </div>
                                     <p className="m-0"><b>Created: {item.date} </b></p>
                                     <p className="m-0"><b>Item Id#: {item._id} </b></p>
                                     <p className="m-0"><b>Notes</b> {item.notes}</p>
