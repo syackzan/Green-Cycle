@@ -74,6 +74,10 @@
   background-color: var(--gray9c)
 }
 
+.greenC {
+  background-color: var(--navColor);
+}
+
 /* Universal Border Used on Pages */
 .mainBorder {
   border: 2px solid var(--navColor);
@@ -279,29 +283,37 @@
 
 /* ABOUT US PAGE */
 
-.recyclerPhoto {
-  background-color: var(--gray9c);
-  width: fit-content;
-  height: fit-content;
-}
-
 .sizingAboutUs {
   height: 80vh;
   background-image: url(https://28umbtaq5i04meah2wwqqofm-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/Maximize-Construction-Recycling-Efforts_HERO.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .bigFont {
-  font-size: 75px;
+  font-size: 65px;
   color: white;
   font-weight: bold;
+  background-color: var(--navColor);
+}
+
+.mediumFont {
+  color: white;
+  font-weight: bold;
+  background-color: var(--navColor);
+  padding: 0px;
+  height: fit-content;
 }
 
 .aboutUsBorder {
   border-bottom: 2px solid white;
 }
+
+/* .headerAboutUs {
+  height: fit-content;
+  background-color: var(--navColor);
+} */
 
 .fakeWidth {
   width: 200px;
