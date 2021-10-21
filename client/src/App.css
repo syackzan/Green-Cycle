@@ -277,6 +277,35 @@
   color: black;
 }
 
+/* ABOUT US PAGE */
+
+.recyclerPhoto {
+  background-color: var(--gray9c);
+  width: fit-content;
+  height: fit-content;
+}
+
+.sizingAboutUs {
+  height: 80vh;
+  background-image: url(https://28umbtaq5i04meah2wwqqofm-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/Maximize-Construction-Recycling-Efforts_HERO.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.bigFont {
+  font-size: 75px;
+  color: white;
+}
+
+.aboutUsBorder {
+  border-bottom: 2px solid white;
+}
+
+.fakeWidth {
+  width: 200px;
+}
+
 /* DASHBOARD PAGE FORMATTING  */
 .cCardHeader {
   border: 2px solid black;

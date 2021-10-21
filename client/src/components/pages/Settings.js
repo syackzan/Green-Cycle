@@ -18,7 +18,6 @@ function Settings() {
     const [formState, setFormState] = useState({
         companyName: '',
         email: '',
-        password: '',
         address: '',
         city: '',
         state: '',
@@ -73,7 +72,6 @@ function Settings() {
         setFormState({
             companyName: contractor.companyName,
             email: contractor.email,
-            password: contractor.password,
             address: contractor.address,
             city: contractor.city,
             state: contractor.state,
@@ -144,15 +142,6 @@ function Settings() {
                                                     placeholder="Enter Email..."
                                                     name="email"
                                                     value={formState.email}
-                                                    onChange={handleChange} />
-                                            </Form.Group>
-                                            <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                <Form.Label>Password: </Form.Label>
-                                                <Form.Control
-                                                    type="password"
-                                                    placeholder="Enter Password..."
-                                                    name="password"
-                                                    value={formState.password}
                                                     onChange={handleChange} />
                                             </Form.Group>
                                         </Form.Group>
