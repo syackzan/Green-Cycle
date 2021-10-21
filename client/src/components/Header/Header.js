@@ -36,7 +36,7 @@ function Header () {
                         <Link className="navStyle" to='/aboutus'>About Us</Link>
                         </li>
                         <li className='nav-item'>
-                        <Link className="navStyle" to='/settings'>⚙️</Link>
+                        <Link className="navStyle" to={`/settings/${Auth.getContractor().data._id}`}>⚙️</Link>
                         </li>
                         </>
                     // <button onClick={() => logout()}>Button</button>

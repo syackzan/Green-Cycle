@@ -11,6 +11,7 @@ import AboutUs from '../pages/AboutUs';
 import Dashboard from '../pages/Dashboard';
 import Project from '../pages/Project'
 import Item from '../pages/Item';
+import Settings from '../pages/Settings';
 
 function GreenCycle () {
     return (
@@ -33,6 +34,9 @@ function GreenCycle () {
           </Route>
           <Route exact path="/item/:projectId/:itemId">
             <Item />
+          </Route>
+          <Route exact path="/settings/:contractorId">
+            <Settings />
           </Route>
           <br/>
           <br/>

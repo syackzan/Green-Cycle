@@ -53,6 +53,21 @@ mutation ADD_ITEM ($id: ID, $material: String!, $quantity: Int!, $unit: String!,
   }
 }`
 
+export const UPDATE_COMPANY = gql `
+mutation UPDATE_COMPANY ($id: ID!, $companyName: String!, $address: String!, $city: String!, $state: String!, $zip: String!, $phoneNumber: String!, $email: String!, $password: String!){
+  updateCompany(contractorId: $id, companyName: $companyName, address: $address, city: $city, state: $state, zip: $zip, phoneNumber: $phoneNumber, email: $email, password: $password){
+    _id
+    companyName
+    address
+    city
+    state
+    zip
+    phoneNumber
+    email
+    password
+  }
+}`
+
 export const UPDATE_ITEM = gql `
 mutation UPDATE_ITEM ($id: ID!, $material: String!, $quantity: Int!, $unit: String!, $notes: String!, $recycler: String!){
   updateItem(itemId: $id, material: $material, quantity: $quantity, unit: $unit, notes: $notes, recycler: $recycler){
