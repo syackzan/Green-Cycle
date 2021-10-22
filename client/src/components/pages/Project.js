@@ -501,14 +501,14 @@ function Project() {
                                     </div>
                                 </Form>
                             </div>
-                            <div className="d-flex row m-0">
-                                <div className="col-4 itemListBorder m-0 p-0">
+                            <div className="d-flex flex-wrap row m-0">
+                                <div className="col-md-4 itemListBorder m-0 p-0">
                                     <Concrete project={project} />
                                 </div>
-                                <div className="col-4 itemListBorder m-0 p-0">
+                                <div className="col-md-4 itemListBorder m-0 p-0">
                                     <Wood project={project} />
                                 </div>
-                                <div className="col-4 itemListBorder m-0 p-0">
+                                <div className="col-md-4 itemListBorder m-0 p-0">
                                     <Steel project={project} />
                                 </div>
                             </div>
