@@ -3,6 +3,7 @@ import { GET_SINGLE_PROJECT } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
 import { ADD_ITEM } from '../../utils/mutations'
 
@@ -14,7 +15,7 @@ import Steel from '../Steel/Steel';
 function Project() {
 
     //Form Input Functionality
-    const [formState, setFormState] = useState ({
+    const [formState, setFormState] = useState({
         material: '',
         quantity: '',
         unit: '',
@@ -22,32 +23,43 @@ function Project() {
         recycler: '',
     })
 
+    const [formState2, setFormState2] = useState({
+        width: '',
+        length: '',
+        thickness: '',
+        quantity: ''
+    })
+
+    const [total, setTotal] = useState(0);
+
+    const [show, setShow] = useState('');
+
     // Grabbing Mutation
     const [addItem, { error }] = useMutation(ADD_ITEM);
-    
+
     //Handling Request to Database to Add Item
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
-        if(formState.material === "Select"){
+        if (formState.material === "Select") {
             alert("Must select a material");
             return;
         }
 
         // Wrap in an if statement that confirms all the input values were entered correctly
-        if(formState.material && formState.quantity && formState.unit && formState.notes && formState.recycler){
+        if (formState.material && formState.quantity && formState.unit && formState.notes && formState.recycler) {
             try {
                 const { data } = await addItem({
-                    variables: {...formState, id: project._id},
-                  })
-                  
-                
-                  window.location.reload();
-                  
-            } catch(e){
+                    variables: { ...formState, id: project._id },
+                })
+
+
+                window.location.reload();
+
+            } catch (e) {
                 console.log(e);
             }
-    
+
             setFormState({
                 material: '',
                 quantity: '',
@@ -66,26 +78,48 @@ function Project() {
         event.preventDefault();
         const { name, value } = event.target;
 
-        if (name ==="material"){
-            setFormState({...formState, material: value})
+        if (name === "material") {
+            setFormState({ ...formState, material: value })
         }
 
-        if (name ==="quantity"){
-            setFormState({...formState, quantity: parseInt(value)})
+        if (name === "quantity") {
+            setFormState({ ...formState, quantity: parseInt(value) })
         }
 
-        if (name ==="unit"){
-            setFormState({...formState, unit: value})
+        if (name === "unit") {
+            setFormState({ ...formState, unit: value })
         }
 
-        if (name ==="notes"){
-            setFormState({...formState, notes: value})
+        if (name === "notes") {
+            setFormState({ ...formState, notes: value })
         }
 
-        if (name ==="recycler"){
-            setFormState({...formState, recycler: value})
+        if (name === "recycler") {
+            setFormState({ ...formState, recycler: value })
         }
-        
+
+    }
+
+    const handleChange2 = (event) => {
+        event.preventDefault();
+
+        const { name, value } = event.target;
+
+        if (name === "width") {
+            setFormState2({ ...formState2, width: parseInt(value) })
+        }
+
+        if (name === "length") {
+            setFormState2({ ...formState2, length: parseInt(value) })
+        }
+
+        if (name === "thickness") {
+            setFormState2({ ...formState2, thickness: parseInt(value) })
+        }
+
+        if (name === "quantity") {
+            setFormState2({ ...formState2, quantity: parseInt(value) })
+        }
     }
 
 
@@ -93,7 +127,7 @@ function Project() {
     const [display, setDisplay] = useState('');
     const toggleVisible = async (event) => {
 
-        if (!display){
+        if (!display) {
             await setDisplay('t')
         } else {
             await setDisplay('')
@@ -102,7 +136,7 @@ function Project() {
 
     //Grabbing Params
     const { projectId } = useParams();
-    
+
 
     //Query Items for a Single Project
     const { loading, data } = useQuery(GET_SINGLE_PROJECT, {
@@ -114,6 +148,278 @@ function Project() {
     //Waiting Text if still Loading
     if (loading) {
         return <div>Project Data Loading...</div>
+    }
+
+    // Handling Modal Functionality
+    const handleClose = () => setShow('');
+
+    const handleCloseAdd = () => {
+        setShow('')
+
+        
+
+        if (formState.material === "Concrete"){
+            setFormState({
+                ...formState,
+                unit: 'CY',
+                quantity: total
+            })
+        }
+
+        if (formState.material === "Wood"){
+            setFormState({
+                ...formState,
+                unit: 'CF',
+                quantity: total
+            })
+        }
+
+        if (formState.material === "Steel"){
+            setFormState({
+                ...formState,
+                unit: '#',
+                quantity: total
+            })
+        }
+    };
+
+    const handleShow = (event) => {
+        event.preventDefault();
+        setShow('t')
+
+        setFormState2({
+            width: '',
+            length: '',
+            thickness: '',
+            quantity: ''
+        })
+    };
+
+    const addConcrete = (event) => {
+        event.preventDefault();
+
+        if (formState2.quantity === ''){
+            setFormState2({
+                ...formState2,
+                quantity: 1,
+            })
+        }
+
+        const totalAdd = ((formState2.length * formState2.width * (formState2.thickness/12) * formState2.quantity)/27);
+        const temp = total;
+
+        let finalTotal = totalAdd + temp
+        finalTotal = Math.round(finalTotal)
+        setTotal(finalTotal);
+
+    }
+
+    const addWood = (event) => {
+        event.preventDefault();
+
+        if (formState2.quantity === ''){
+            setFormState2({
+                ...formState2,
+                quantity: 1,
+            })
+        }
+
+        const totalAdd = formState2.length * (formState2.width/12) * (formState2.thickness/12) * formState2.quantity;
+        const temp = total;
+
+        let finalTotal = totalAdd + temp
+        finalTotal = Math.round(finalTotal)
+        setTotal(finalTotal);
+
+    }
+
+    const addSteel = (event) => {
+        event.preventDefault();
+
+        if (formState2.quantity === ''){
+            setFormState2({
+                ...formState2,
+                quantity: 1,
+            })
+        }
+
+        const totalAdd = formState2.length * (formState2.width) * (formState2.thickness) * formState2.quantity;
+        const temp = total;
+
+        let finalTotal = totalAdd + temp
+        finalTotal = Math.round(finalTotal)
+        setTotal(finalTotal);
+
+    }
+
+    const resetCalc = (event) => {
+        event.preventDefault();
+
+        setTotal('');
+    }
+
+    const renderCalculator = () => {
+        if (formState.material === "Concrete") {
+            return (
+                <div>
+                    <Form.Group className="d-flex justify-content-center m-1">
+                            <Form.Label className="loginHeader">Total: {total} </Form.Label>
+                    </Form.Group>
+                    <Form className=" d-flex flex-fill flex-wrap" >
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicEmail">
+                            <Form.Label>Width: </Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter width in feet"
+                                name="width"
+                                value={formState2.width}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Length:</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter length in feet"
+                                name="length"
+                                value={formState2.length}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Thickness:</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter thickness in inches"
+                                name="thickness"
+                                value={formState2.thickness}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Quantity:</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter # of Floors or Walls"
+                                name="quantity"
+                                value={formState2.quantity}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <button className="standardBtn" onClick={addConcrete}>
+                            Accumulate
+                        </button>
+                        <button className="primary resetBtn standardBtn" onClick={resetCalc}>
+                            Reset
+                        </button>
+                    </Form>
+                </div>
+            )
+        } else if (formState.material === "Wood") {
+            return (
+                <div>
+                    <Form.Group className="d-flex justify-content-center m-1">
+                            <Form.Label className="loginHeader">Total: {total} </Form.Label>
+                    </Form.Group>
+                    <Form className=" d-flex flex-fill flex-wrap" >
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicEmail">
+                            <Form.Label>Width: </Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter width in inches"
+                                name="width"
+                                value={formState2.width}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Thickness:</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter thickness in inches"
+                                name="thickness"
+                                value={formState2.thickness}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Length:</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter length in feet"
+                                name="length"
+                                value={formState2.length}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Quantity:</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter quantity of studs, beams or sheets"
+                                name="quantity"
+                                value={formState2.quantity}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <button className="standardBtn" onClick={addWood}>
+                            Accumulate
+                        </button>
+                        <button className="primary resetBtn standardBtn" onClick={resetCalc}>
+                            Reset
+                        </button>
+                    </Form>
+                </div>
+            )
+        } else if (formState.material === "Steel") {
+            return (
+                <div>
+                    <Form.Group className="d-flex justify-content-center m-1">
+                            <Form.Label className="loginHeader">Total: {total} </Form.Label>
+                    </Form.Group>
+                    <Form className=" d-flex flex-fill flex-wrap" >
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicEmail">
+                            <Form.Label>Depth: </Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter wide Flange Index..."
+                                name="width"
+                                value={formState2.width}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Weight/ft</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter weight/ft..."
+                                name="thickness"
+                                value={formState2.thickness}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Length:</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter length in feet"
+                                name="length"
+                                value={formState2.length}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
+                            <Form.Label>Quantity:</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Enter quantity of beams or columns..."
+                                name="quantity"
+                                value={formState2.quantity}
+                                onChange={handleChange2} />
+                        </Form.Group>
+                        <button className="standardBtn" onClick={addSteel}>
+                            Accumulate
+                        </button>
+                        <button className="primary resetBtn standardBtn" onClick={resetCalc}>
+                            Reset
+                        </button>
+                    </Form>
+                </div>
+            )
+        } else {
+            return (
+                <p>Material Not Selected</p>
+            )
+        }
     }
 
     return (
@@ -132,7 +438,7 @@ function Project() {
                                     <p className="m-0 textW"><b>Owner:</b> {project.owner}</p>
                                 </div>
                                 <div className="p-2">
-                                    <button onClick={() => toggleVisible()}>Add New Item</button>
+                                    <button className="standardBtn" onClick={() => toggleVisible()}>Add New Item</button>
                                 </div>
                             </div>
                             <div className={display ? ("displayYes row m-0 align-items-center thickBorder styleLogin") : ("displayNo")}>
@@ -146,11 +452,14 @@ function Project() {
                                             <option>Select</option>
                                             <option value="Concrete">Concrete</option>
                                             <option value="Wood">Wood</option>
-                                            <option value="Steel">Steel</option> 
+                                            <option value="Steel">Steel</option>
                                         </Form.Select>
                                     </Form.Group>
                                     <Form.Group className="mb-3 m-1 flex-fill" controlId="formBasicPassword">
                                         <Form.Label>Quantity:</Form.Label>
+                                        <button className="standardBtn" onClick={handleShow}>
+                                            calculate
+                                        </button>
                                         <Form.Control
                                             type="number"
                                             placeholder="Enter Quantity"
@@ -186,7 +495,7 @@ function Project() {
                                             onChange={handleChange} />
                                     </Form.Group>
                                     <div className="d-flex align-items-end m-1">
-                                        <button className="fitContent" onClick={handleFormSubmit}>
+                                        <button className="fitContent standardBtn" onClick={handleFormSubmit}>
                                             Submit
                                         </button>
                                     </div>
@@ -204,6 +513,22 @@ function Project() {
                                 </div>
                             </div>
                         </div>
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Calculate The Amount of {formState.material}</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                {renderCalculator()}
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <button className="standardBtn" onClick={handleClose}>
+                                    Close
+                                </button>
+                                <button className="standardBtn" onClick={handleCloseAdd}>
+                                    Finish
+                                </button>
+                            </Modal.Footer>
+                        </Modal>
                     </div>
                 </div>
             </div>

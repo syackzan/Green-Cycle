@@ -98,6 +98,14 @@
   margin-right: 20px;
 }
 
+/* Universal Button Styling */
+.standardBtn {
+  border-radius: 5px;
+  margin-left: 5px;
+  background-color: rgb(43, 40, 40);
+  color: white;
+}
+
 /* Used to Center main Pages */
 .center {
   margin: 50px;
@@ -445,6 +453,13 @@
   border-bottom: 3px solid black;
 }
 
+.calculateBtn {
+  border-radius: 5px;
+  margin-left: 5px;
+  background-color: rgb(43, 40, 40);
+  color: white;
+}
+
 .recycleType2 {
   margin: 0px;
   padding-left: 5px;
@@ -477,7 +492,11 @@
   border: 2px solid black;
   padding: 0px 3px;
   background-color:rgb(61, 58, 58);
-}  
+} 
+
+.resetBtn {
+  margin-left: 10px;
+}
 
 /* STYLING ITEM PAGE */
 
@@ -579,4 +598,8 @@
   transform:scale(1.1,1.1);
   -webkit-transform:scale(1.1,1.1);
   -moz-transform:scale(1.1,1.1);
+}
+
+.standardBtn:hover {
+  background-color: rgb(99, 87, 87);
 }
