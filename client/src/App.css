@@ -334,6 +334,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: auto;
+  justify-content: end;
 }
 
 .bigFont {
@@ -398,6 +399,7 @@
   margin: auto;
   height: 60vh;
   width: 40vw;
+  flex-grow: 1;
 }
 
 /* PROJECTLIST FORMATTING */
