@@ -98,7 +98,7 @@ function Settings() {
             <div className="container-fluid">
                 <div className="row p-4">
                     <div className="col-md-12 topMargin" >
-                        <div className="d-flex justify-content-center align-items-center sizingLogin boxShadow">
+                        <div className="d-flex justify-content-center align-items-center sizingSignUp boxShadow">
                             <div>
                                 <div className={!display ? (`mainItemBorder p-1 brownC textW`) : ("displayNo")}>
                                     <div>
@@ -121,7 +121,7 @@ function Settings() {
                             <div className={display ? (`displayYes d-flex align-items-center boxShadow styleLogin`) : ("displayNo")}>
                                 <Form className="flex-fill" >
                                     <Form.Group className="d-flex justify-content-center">
-                                        <Form.Label className="loginHeader">Sign Up Below!</Form.Label>
+                                        <Form.Label className="loginHeader">Edit Info Below!</Form.Label>
                                     </Form.Group>
                                     <Form.Group className="d-flex flex-wrap">
                                         <Form.Group className="m-2 flex-fill">
@@ -195,7 +195,7 @@ function Settings() {
                                     </Form.Group>
                                     <div className="d-flex align-items-end justify-content-between m-1">
                                         <div>
-                                            <button className="fitContent" onClick={handleFormSubmit}>
+                                            <button className="fitContent submitBtn" onClick={handleFormSubmit}>
                                                 Submit
                                             </button>
                                         </div>
