@@ -94,7 +94,7 @@ function Login() {
                                         value={formState.password}
                                         onChange={handleChange} />
                                     </Form.Group>
-                                    <button onClick={handleFormSubmit}>
+                                    <button className="standardBtn" onClick={handleFormSubmit}>
                                         Login
                                     </button>
                                 </Form>    

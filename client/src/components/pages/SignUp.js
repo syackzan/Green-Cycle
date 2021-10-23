@@ -153,7 +153,7 @@ function SignUp() {
                                             </Form.Group>
                                         </Form.Group>
                                     </Form.Group>
-                                    <button onClick={handleFormSubmit}>
+                                    <button className="standardBtn" onClick={handleFormSubmit}>
                                         Submit
                                     </button>
                                 </Form>

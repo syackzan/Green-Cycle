@@ -34,34 +34,32 @@ function Analytics({ contractor }) {
         ]
       }
 
-    return (
-        <div className="d-flex align-items-center boxShadow styleLogin m-1">
-            <div className="d-flex flex-fill chart-container styleGraph">
-                <Bar
-                    className="flex-shrink"
-                    data={state}
-                    
-                    options={{
-                        title: {
-                            display: true,
-                            text: 'Recycle',
-                            fontSize: 30
-                        },
-                        legend: {
-                            display: true,
-                            position: 'right',
-                            labels: {
-                                font: {
-                                    size: 26
-                                },
-                                color: 'black'
-                            }
-                        },
-                        responsive: true,
-                    }}
-                />
-            </div>
+    return ( 
+        <div className="chart-container boxShadow m-2">
+            <Bar
+                data={state}
+                options={{
+                    title: {
+                        display: true,
+                        text: 'Recycle',
+                        fontSize: 30
+                    },
+                    legend: {
+                        display: true,
+                        position: 'right',
+                        labels: {
+                            font: {
+                                size: 26
+                            },
+                            color: 'black'
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                }}
+            />
         </div>
+        
 
     )
 }

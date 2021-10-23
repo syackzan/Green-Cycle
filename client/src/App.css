@@ -356,8 +356,11 @@
 }
 
 /* ANALYTICS FORMATTING */
-.styleGraph {
+.chart-container {
   position: relative;
+  margin: auto;
+  height: 60vh;
+  width: 40vw;
 }
 
 /* PROJECTLIST FORMATTING */
@@ -512,6 +515,13 @@
 
 .deleteBtn {
   background-color: darkred;
+  border-radius: 5px;
+}
+
+.submitBtn {
+  background-color: var(--navColor);
+  color: white;
+  border-radius: 5px;
 }
 
 
@@ -602,4 +612,12 @@
 
 .standardBtn:hover {
   background-color: rgb(99, 87, 87);
+}
+
+.submitBtn:hover {
+  background-color: green;
+}
+
+.deleteBtn:hover {
+  background-color: red;
 }

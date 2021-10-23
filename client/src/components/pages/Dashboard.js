@@ -47,7 +47,7 @@ function Dashboard (){
                                             <p className="textW">{contractor.address}, {contractor.city}, {contractor.state} {contractor.zip}</p>
                                         </div>
                                         <div className="p-2">
-                                            <button onClick={() => toggleVisible()}>Add New Project</button>
+                                            <button className="standardBtn" onClick={() => toggleVisible()}>Add New Project</button>
                                         </div>
                                     </div>
                                     <div className="cCardBody d-flex boxShadow">

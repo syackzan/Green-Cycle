@@ -220,12 +220,12 @@ function Item() {
                                     </Form.Group>
                                     <div className="d-flex align-items-end justify-content-between m-1">
                                         <div>
-                                            <button className="fitContent" onClick={handleFormSubmit}>
+                                            <button className="fitContent submitBtn" onClick={handleFormSubmit}>
                                                 Submit
                                             </button>
                                         </div>
                                         <div>
-                                            <button className="styleItemLink" onClick={() => toggleVisibleForm()}>
+                                            <button className="standardBtn" onClick={() => toggleVisibleForm()}>
                                                 Return
                                             </button>
                                         </div>

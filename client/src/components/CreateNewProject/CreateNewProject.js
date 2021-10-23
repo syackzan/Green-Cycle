@@ -9,7 +9,7 @@ function CreateNewProject() {
     const [formState, setFormState] = useState({
         name: '',
         type: '',
-        squareFootage: 0,
+        squareFootage: '',
         address: '',
         city: '',
         state: '',
@@ -30,7 +30,7 @@ function CreateNewProject() {
               setFormState({
                 name: '',
                 type: '',
-                squareFootage: 0,
+                squareFootage: '',
                 address: '',
                 city: '',
                 state: '',
@@ -166,7 +166,7 @@ function CreateNewProject() {
                         value={formState.owner}
                         onChange={handleChange} />
                 </Form.Group>
-                <button onClick={handleFormSubmit}>
+                <button className="standardBtn" onClick={handleFormSubmit}>
                     Submit
                 </button>
             </Form>
