@@ -300,17 +300,17 @@
 }
 
 .bigFont {
-  font-size: 65px;
+  font-size: 40px;
   color: white;
   font-weight: bold;
-  background-color: var(--navColor);
+  background-color: rgb(43, 40, 40);
 }
 
 .mediumFont {
   color: white;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
-  background-color: var(--navColor);
+  background-color: rgb(43, 40, 40);
   padding: 0px;
   height: fit-content;
 }

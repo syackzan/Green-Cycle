@@ -7,8 +7,8 @@ function AboutUs() {
         <div className ="jumbotron">
             <div className="container-fluid">
                 <div className="row m-3 sizingAboutUs boxShadow d-flex flex-wrap">
-                    <div className="col-6 fakeWidth"></div>
-                    <div className="col-6 d-flex flex-column">
+                    <div className="col-md-6 fakeWidth"></div>
+                    <div className="col-md-6 d-flex flex-column">
                         <div className="row flex-fill">
                             <div className="d-flex align-items-end headerAboutUs p-0">
                                 <h2 className="bigFont boxShadow p-2">
