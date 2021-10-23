@@ -1,17 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/images/logo1.png'
 import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
-function Header () {
-    
+function Header() {
+
     let urlId;
 
     const logout = (event) => {
         //event.preventDefault();
         Auth.logout();
     }
+
+    // <button onClick={() => logout()}>Button</button>
+
+    const [sidenavDisplay, setSideNavDisplay] = useState('');
+
+    const showSideNav = () => setSideNavDisplay('t');
+    const closeSideNav = () => setSideNavDisplay('');
 
     return (
         <header className="headerStyle">
@@ -25,7 +32,7 @@ function Header () {
             <div className="pushNav webDisplay">
                 <ul className="nav nav-tabs">
                     {Auth.loggedIn() ? (
-                        <>
+                    <>
                         <li className='nav-item'>
                         <Link className="navStyle" to={`/dashboard/${Auth.getContractor().data._id}`}>Dashboard</Link>
                         </li>
@@ -38,8 +45,7 @@ function Header () {
                         <li className='nav-item'>
                         <Link className="navStyle" to={`/settings/${Auth.getContractor().data._id}`}>⚙️</Link>
                         </li>
-                        </>
-                    // <button onClick={() => logout()}>Button</button>
+                    </>
                     ) : (
                     <>
                         <li className='nav-item'>
@@ -56,9 +62,44 @@ function Header () {
                 </ul>   
             </div>
             <div className="phoneDisplay pushNavButton">
-                <button>☰</button>
+                <button onClick={showSideNav}>☰</button>
             </div>
-        </header>
+            <div className={sidenavDisplay ? ("sidenav displayYes") : ("displayNo")}>
+                <div className="d-flex justify-content-end m-1">
+                    <button className="standardBtn" onClick={closeSideNav}>x</button>
+                </div>
+                <ul className="nav nav-tabs">
+                    {Auth.loggedIn() ? (
+                        <>
+                            <li className='sidenav-item'>
+                            <Link className="sidenavStyle" to={`/dashboard/${Auth.getContractor().data._id}`} onClick={closeSideNav}>Dashboard</Link>
+                            </li>
+                            <li className='sidenav-item'>
+                            <Link className="sidenavStyle" to="#" onClick={async () => await logout()}>Logout</Link>
+                            </li>
+                            <li className='sidenav-item'>
+                            <Link className="sidenavStyle" to='/aboutus' onClick={closeSideNav}>About Us</Link>
+                            </li>
+                            <li className='sidenav-item'>
+                            <Link className="sidenavStyle" to={`/settings/${Auth.getContractor().data._id}`} onClick={closeSideNav}>Settings</Link>
+                            </li>
+                        </>
+                        ) : (
+                        <>
+                            <li className='sidenav-item'>
+                            <Link className="sidenavStyle" to='/signup' onClick={closeSideNav}>Sign Up</Link>
+                            </li>
+                            <li className='sidenav-item'>
+                            <Link className="sidenavStyle" to='/' onClick={closeSideNav}>Login</Link>
+                            </li>
+                            <li className='sidenav-item'>
+                            <Link className="sidenavStyle" to='/aboutus' onClick={closeSideNav}>About Us</Link>
+                            </li>
+                        </>
+                        )}
+                </ul>
+            </div>
+        </header >
     )
 }
 

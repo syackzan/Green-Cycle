@@ -160,10 +160,38 @@
   background-color: lightgray;
 }
 
+.sidenav-item {
+  margin: 0px 5px;
+  padding: 5px;
+  color: white;
+}
+
 /* Changing Nav Links to a differnt style than normal underline blue */
 .navStyle {
   color: var(--navColor);
   text-decoration: none;
+}
+
+.sidenavStyle {
+  color: white;
+  text-decoration: none;
+}
+
+.sidenav {
+  height: 100%;  
+  width: 25%;  
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  right: 0; 
+  background-color: var(--navy); 
+  transition: .5s ease; 
+  overflow-x: hidden; 
+  padding-top: 10px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  box-shadow: -3px 0px 5px 1px black;
 }
 
 .noStyle {
@@ -343,12 +371,12 @@
   display: block;
 }
 
-.fitContent {
-  height: fit-content;
-}
-
 .displayNo {
   display: none;
+}
+
+.fitContent {
+  height: fit-content;
 }
 
 .spaceM {

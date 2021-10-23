@@ -9,9 +9,6 @@ function Footer () {
                     <a className='navStyle' href="about">License #1259782</a>
                 </li>
                 <li className='footer-links'>
-                    <a className='navStyle' href="portfolio">Built By @syackzan/github</a>
-                </li>
-                <li className='footer-links'>
                     <a className='navStyle' href="resume">Recycle!</a>
                 </li>
             </ul>
