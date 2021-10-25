@@ -441,7 +441,7 @@ function Project() {
                                     <button className="standardBtn" onClick={() => toggleVisible()}>Add New Item</button>
                                 </div>
                             </div>
-                            <div className={display ? ("displayYes row m-0 align-items-center thickBorder styleLogin") : ("displayNo")}>
+                            <div className={display ? ("displayYes row m-0 align-items-center thickBorder styleAddNewProject") : ("displayNo")}>
                                 <Form.Group className="d-flex justify-content-center m-1">
                                     <Form.Label className="loginHeader">Enter New Item</Form.Label>
                                 </Form.Group>
