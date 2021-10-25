@@ -311,6 +311,11 @@
   background-color: #f5f5f5;
 }
 
+.styleAddNewProject {
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
 .loginHeader {
   font-size: 24px;
   font-weight: bold;

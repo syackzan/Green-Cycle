@@ -168,7 +168,7 @@ function Item() {
                                     <button className="styleItemLink" onClick={() => toggleVisible()}>Edit Material</button>
                                 </div>
                             </div>
-                            <div className={display ? (`displayYes row d-flex justify-content-center m-0 align-items-center blackBorder styleLogin m-1 ${background}`) : ("displayNo")}>
+                            <div className={display ? (`displayYes row d-flex justify-content-center m-0 align-items-center blackBorder styleAddNewProject m-1 ${background}`) : ("displayNo")}>
                                 <Form.Group className="d-flex justify-content-center m-1">
                                     <Form.Label className="loginHeader textW">Edit Item Info Below</Form.Label>
                                 </Form.Group>

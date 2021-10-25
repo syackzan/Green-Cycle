@@ -85,7 +85,7 @@ function CreateNewProject() {
     }
     
     return (
-        <div className="d-flex align-items-center boxShadow styleLogin m-1">
+        <div className="d-flex align-items-center boxShadow styleAddNewProject m-1">
             <Form className="flex-fill" >
                 <Form.Group className="d-flex justify-content-center">
                     <Form.Label className="loginHeader">Enter New Project Info Below</Form.Label>
