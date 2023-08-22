@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
-  "homepage": "https://mighty-headland-87510.herokuapp.com/", 
+  "homepage": "https://mighty-headland-87510.herokuapp.com/",
   "dependencies": {
     "@apollo/client": "^3.4.16",
     "@testing-library/jest-dom": "^5.14.1",
