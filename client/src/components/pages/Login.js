@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContractorList from '../ContractorList/ContractorList'
 import Form from 'react-bootstrap/Form';
 import { useHistory } from "react-router-dom";
@@ -10,7 +10,7 @@ import { GET_ALL_CONTRACTORS } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
-function Login() {
+function Login({demo, setDemo}) {
 
     const { loading, data } = useQuery(GET_ALL_CONTRACTORS);
     const contractors = data?.contractors || [];
@@ -19,6 +19,16 @@ function Login() {
 
     const [formState, setFormState] = useState({email: '', password: ''});
     const [login, { error }] = useMutation(LOGIN_USER);
+
+    useEffect(() => {
+        if(demo)
+        {
+            setFormState({
+                email: "websiteDemo@demo.com",
+                password: "construction123"
+            })
+        }
+    }, [demo]);
 
     const handleChange = (event) => {
         event.preventDefault();

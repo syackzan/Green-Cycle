@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
-function Header() {
+function Header({ handleShow }) {
 
     let urlId;
 
@@ -54,6 +54,9 @@ function Header() {
                         <li className='nav-item'>
                         <Link className="navStyle" to='/'>Login</Link>
                         </li>
+                        <li className="nav-item">
+                        <Link className="navStyle" to='/' onClick={handleShow}>Demo</Link>
+                        </li>
                         <li className='nav-item'>
                         <Link className="navStyle" to='/aboutus'>About Us</Link>
                         </li>
@@ -91,6 +94,9 @@ function Header() {
                             </li>
                             <li className='sidenav-item'>
                             <Link className="sidenavStyle" to='/' onClick={closeSideNav}>Login</Link>
+                            </li>
+                            <li className='sidenav-item'>
+                            <Link className="sidenavStyle" to='/' onClick={closeSideNav}>Demo</Link>
                             </li>
                             <li className='sidenav-item'>
                             <Link className="sidenavStyle" to='/aboutus' onClick={closeSideNav}>About Us</Link>
