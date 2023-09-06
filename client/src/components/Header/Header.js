@@ -20,6 +20,11 @@ function Header({ handleShow }) {
     const showSideNav = () => setSideNavDisplay('t');
     const closeSideNav = () => setSideNavDisplay('');
 
+    const controlSideNavDemo = () => {
+        handleShow();
+        setSideNavDisplay('');
+    }
+
     return (
         <header className="headerStyle">
             <div className="pushHeader">
@@ -96,7 +101,7 @@ function Header({ handleShow }) {
                             <Link className="sidenavStyle" to='/' onClick={closeSideNav}>Login</Link>
                             </li>
                             <li className='sidenav-item'>
-                            <Link className="sidenavStyle" to='/' onClick={closeSideNav}>Demo</Link>
+                            <Link className="sidenavStyle" to='/' onClick={controlSideNavDemo}>Demo</Link>
                             </li>
                             <li className='sidenav-item'>
                             <Link className="sidenavStyle" to='/aboutus' onClick={closeSideNav}>About Us</Link>
